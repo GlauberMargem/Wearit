@@ -12,30 +12,37 @@ import com.wearit.projeto.repository.UsuarioRepository;
 @Service
 public class UsuarioService {
 
-	@Autowired
-	private UsuarioRepository usuarioRepository;
-	
-	public List<UsuarioDTO> ListarTodos(){
-		List<UsuarioEntity> usuarios = usuarioRepository.findAll ();
-		return usuarios.stream ().map(UsuarioDTO::new).toList();
-	}
-	
-	public void inserir(UsuarioDTO usuario) {
-		UsuarioEntity usuarioEntity = new UsuarioEntity(usuario);
-		usuarioRepository.save(usuarioEntity);
-	}
-	
-	public UsuarioDTO alterar(UsuarioDTO usuario) {
-		UsuarioEntity usuarioEntity = new UsuarioEntity(usuario);
-		return new UsuarioDTO(usuarioRepository.save(usuarioEntity));
-	}
-	
-	public void excluir(Long id) {
-		UsuarioEntity usuario = usuarioRepository.findById(id).get();
-		usuarioRepository.delete(usuario);
-	}
-	
-	public UsuarioDTO buscarPorId(Long id) {
-		return new UsuarioDTO(usuarioRepository.findById(id).get());
-	}
- }
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
+    // Listar todos os usuários
+    public List<UsuarioDTO> listarTodos() {
+        List<UsuarioEntity> usuarios = usuarioRepository.findAll();
+        return usuarios.stream().map(UsuarioDTO::new).toList();
+    }
+
+    // Inserir novo usuário
+    public void inserir(UsuarioDTO usuario) {
+        UsuarioEntity usuarioEntity = new UsuarioEntity(usuario);
+        usuarioRepository.save(usuarioEntity);
+    }
+
+    // Alterar usuário existente
+    public UsuarioDTO alterar(UsuarioDTO usuario) {
+        UsuarioEntity usuarioEntity = new UsuarioEntity(usuario);
+        return new UsuarioDTO(usuarioRepository.save(usuarioEntity));
+    }
+
+    // Excluir usuário por ID
+    public void excluir(Long id) {
+        UsuarioEntity usuario = usuarioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+        usuarioRepository.delete(usuario);
+    }
+
+    // Buscar usuário por ID
+    public UsuarioDTO buscarPorId(Long id) {
+        return new UsuarioDTO(usuarioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado")));
+    }
+}
