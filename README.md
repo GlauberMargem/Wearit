@@ -1,8 +1,4 @@
-Aqui está uma versão atualizada do seu arquivo README para o projeto **Wearit**, agora incluindo os princípios SOLID e outras tecnologias:
-
----
-
-# Wearit - E-commerce de Moda Online
+<h1 align="center"># Wearit - E-commerce de Moda Online</h1>
 
 Wearit é um projeto de site de e-commerce para uma marca própria focada no mercado de moda online. O site será simples, minimalista e dedicado a proporcionar uma experiência de usuário fluida.
 
