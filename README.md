@@ -31,3 +31,5 @@
 ## 🚀 Como Executar
 
 (lorem ipsum)
+
+## ✒️ Autores
