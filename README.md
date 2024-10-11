@@ -1,4 +1,4 @@
-Aqui está uma versão melhorada do seu arquivo README para o projeto **Wearit**:
+Aqui está uma versão atualizada do seu arquivo README para o projeto **Wearit**, agora incluindo os princípios SOLID e outras tecnologias:
 
 ---
 
@@ -13,6 +13,11 @@ Wearit é um projeto de site de e-commerce para uma marca própria focada no mer
 - **PostgreSQL** 🐘 como banco de dados
 - **JPA** e **Hibernate** para persistência de dados
 - **Maven** para gerenciamento de dependências
+- **Spring Data JPA** para consultas ao banco de dados
+- **API REST** para comunicação entre cliente e servidor
+- **Injeção de Dependências** para promover um design desacoplado
+- **Tratamento de Respostas de Erro** para melhorar a robustez da aplicação
+- **Princípios SOLID** para um design de software mais sustentável e escalável
 
 ## ⚙️ Funcionalidades
 
@@ -49,4 +54,4 @@ Wearit é um projeto de site de e-commerce para uma marca própria focada no mer
 
 ---
 
-Sinta-se à vontade para personalizar ainda mais conforme necessário!
+Sinta-se à vontade para adicionar mais detalhes ou ajustar o conteúdo conforme necessário!
