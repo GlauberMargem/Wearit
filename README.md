@@ -22,9 +22,9 @@
 
 ## 💻 Requisitos de Sistema
 
-- Java 21+
-- MySQL (ou outro banco de dados relacional)
-- Maven (para gerenciamento de dependências no Spring Boot)
+- Java 21+ ☕
+- PostgreSQL 🐘
+- Maven (para gerenciamento de dependências no Spring Boot) 🪶
 
 ---
 
