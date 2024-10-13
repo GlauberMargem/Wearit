@@ -1,14 +1,8 @@
 package com.wearit.projeto.entity;
 
 import com.wearit.projeto.dto.UsuarioDTO;
-import org.springframework.beans.BeanUtils; // Certifique-se de que esta importação está correta
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import org.springframework.beans.BeanUtils;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "WEA_USUARIO")
@@ -18,28 +12,30 @@ public class UsuarioEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long usu_id; // Identificador único do usuário
     
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String usu_nome; // Nome do usuário
     
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String usu_senha; // Senha do usuário
     
     @Column(nullable = false)
     private char usu_adm; // Indica se o usuário é administrador (1 ou 0)
-    
-    @Column(nullable = false)
-    private Long end_id; // Referência ao endereço (FK)
+
+    // Mapeamento do relacionamento com o endereço
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "end_id", referencedColumnName = "end_id")
+    private EnderecoEntity endereco; // Relacionamento com o endereço
 
     // Construtor que aceita um DTO
     public UsuarioEntity(UsuarioDTO usuario) {
-        BeanUtils.copyProperties(usuario, this); // Corrigido: adicionando ponto e vírgula
+        BeanUtils.copyProperties(usuario, this);
     }
-    
+
     // Construtor padrão
     public UsuarioEntity() {
     	
     }
-    
+
     // Getters e Setters
     public Long getUsu_id() {
         return usu_id;
@@ -73,11 +69,11 @@ public class UsuarioEntity {
         this.usu_adm = usu_adm;
     }
 
-    public Long getEnd_id() {
-        return end_id;
+    public EnderecoEntity getEndereco() {
+        return endereco;
     }
 
-    public void setEnd_id(Long end_id) {
-        this.end_id = end_id;
+    public void setEndereco(EnderecoEntity endereco) {
+        this.endereco = endereco;
     }
 }

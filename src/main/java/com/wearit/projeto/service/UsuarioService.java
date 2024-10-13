@@ -33,11 +33,11 @@ public class UsuarioService {
         return new UsuarioDTO(usuarioRepository.save(usuarioEntity));
     }
 
-    // Excluir usuário por ID
+    // Excluir usuário por ID (usuário e endereço)
     public void excluir(Long id) {
         UsuarioEntity usuario = usuarioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
-        usuarioRepository.delete(usuario);
+        usuarioRepository.delete(usuario); // Cascade vai deletar o endereço automaticamente
     }
 
     // Buscar usuário por ID
