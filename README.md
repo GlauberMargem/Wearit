@@ -27,7 +27,7 @@ Wearit é um projeto de site de e-commerce para uma marca própria focada no mer
 
 - **Java 21+** ☕
 - **PostgreSQL** 🐘
-- **Maven** (para gerenciamento de dependências no Spring Boot) 🪶
+- **Maven** (para gerenciamento de dependências no Spring Boot)
 
 ## 🚀 Como Executar
 
