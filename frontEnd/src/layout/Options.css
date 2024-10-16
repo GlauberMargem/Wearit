@@ -1,0 +1,37 @@
+.navigation-section {
+    display: flex;
+    justify-content: center;
+}
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    padding-top: 10px;
+}
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.nav-menu li {
+    font-size: 25px;
+    font-size: clamp(20px, 2vw, 25px);
+    position: relative;
+}
+.nav-menu a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.nav-menu a:hover {
+    color: #ff6347;
+    transform: scale(1.1);
+}
+@media (max-width: 650px) {
+    .nav-menu {
+        display: none;
+    }
+}

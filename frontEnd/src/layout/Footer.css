@@ -1,0 +1,13 @@
+Footer {
+    background-color: #000;
+    text-align: center;
+    border-radius: 50px;
+    margin: 10px;
+}
+
+Footer h1 {
+    font-size: clamp(16px, 2vw, 36px); /* Tamanho mínimo 16px, flexível até 36px */
+    margin: 0;
+    color: #fff;
+    padding: 10px 0;
+  }
