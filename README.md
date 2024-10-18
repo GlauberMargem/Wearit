@@ -4,6 +4,7 @@ Wearit é um projeto de site de e-commerce para uma marca própria focada no mer
 
 ## 🛠️ Tecnologias Utilizadas
 
+### Back-end
 - **Java 21+** ☕
 - **Spring Boot** para desenvolvimento do back-end
 - **PostgreSQL** 🐘 como banco de dados
@@ -14,6 +15,19 @@ Wearit é um projeto de site de e-commerce para uma marca própria focada no mer
 - **Injeção de Dependências** para promover um design desacoplado
 - **Tratamento de Respostas de Erro** para melhorar a robustez da aplicação
 - **Princípios SOLID** para um design de software mais sustentável e escalável
+
+### Front-end
+- **ReactJS**: Para construir interfaces de usuário
+- **Axios**: Para requisições HTTP
+- **HTML/CSS**: Para a estrutura e estilo da aplicação
+
+### Ferramentas e Recursos
+- **Postman**: Para testar APIs
+- **VSCode**: Editor de código
+- **Eclipse**: IDE para desenvolvimento Java
+- **Notion**: Para organização e gerenciamento de projetos
+- **Draw.io** e **Lucidchart**: Para modelagem de banco de dados
+- **Figma** e **CorelDRAW**: Para prototipagem de interfaces
 
 ## ⚙️ Funcionalidades
 
@@ -28,9 +42,11 @@ Wearit é um projeto de site de e-commerce para uma marca própria focada no mer
 - **Java 21+** ☕
 - **PostgreSQL** 🐘
 - **Maven** (para gerenciamento de dependências no Spring Boot)
+- **Node.js** e **npm** (para o front-end)
 
 ## 🚀 Como Executar
 
+### Back-end
 1. Clone o repositório:  
    ```bash
    git clone <URL_DO_REPOSITORIO>
@@ -48,6 +64,20 @@ Wearit é um projeto de site de e-commerce para uma marca própria focada no mer
 
 4. Acesse o site no navegador em: [http://localhost:8080](http://localhost:8080)
 
----
+### Front-end
+1. Navegue até o diretório do front-end:  
+   ```bash
+   cd wearit-frontend
+   ```
 
-Sinta-se à vontade para adicionar mais detalhes ou ajustar o conteúdo conforme necessário!
+2. Instale as dependências:  
+   ```bash
+   npm install
+   ```
+
+3. Execute o servidor do front-end:  
+   ```bash
+   npm start
+   ```
+
+4. Acesse a aplicação no navegador em: [http://localhost:5173](http://localhost:5173)
