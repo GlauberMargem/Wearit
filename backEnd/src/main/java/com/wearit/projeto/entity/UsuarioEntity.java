@@ -10,30 +10,26 @@ public class UsuarioEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long usu_id; // Identificador único do usuário
+    private Long usu_id;
     
-    @Column(nullable = false, unique = true)
-    private String usu_nome; // Nome do usuário
-    
-    @Column(nullable = false)
-    private String usu_senha; // Senha do usuário
+    @Column(name = "usu_nome", nullable = false, unique = true)
+    private String usuNome;
     
     @Column(nullable = false)
-    private char usu_adm; // Indica se o usuário é administrador (1 ou 0)
+    private String usuSenha;
+    
+    @Column(nullable = false)
+    private boolean usuAdm;
 
-    // Mapeamento do relacionamento com o endereço
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "end_id", referencedColumnName = "end_id")
-    private EnderecoEntity endereco; // Relacionamento com o endereço
+    private EnderecoEntity endereco;
 
-    // Construtor que aceita um DTO
     public UsuarioEntity(UsuarioDTO usuario) {
         BeanUtils.copyProperties(usuario, this);
     }
 
-    // Construtor padrão
     public UsuarioEntity() {
-    	
     }
 
     // Getters e Setters
@@ -45,28 +41,28 @@ public class UsuarioEntity {
         this.usu_id = usu_id;
     }
 
-    public String getUsu_nome() {
-        return usu_nome;
+    public String getUsuNome() {
+        return usuNome;
     }
 
-    public void setUsu_nome(String usu_nome) {
-        this.usu_nome = usu_nome;
+    public void setUsuNome(String usuNome) {
+        this.usuNome = usuNome;
     }
 
-    public String getUsu_senha() {
-        return usu_senha;
+    public String getUsuSenha() {
+        return usuSenha;
     }
 
-    public void setUsu_senha(String usu_senha) {
-        this.usu_senha = usu_senha;
+    public void setUsuSenha(String usuSenha) {
+        this.usuSenha = usuSenha;
     }
 
-    public char getUsu_adm() {
-        return usu_adm;
+    public boolean isUsuAdm() {
+        return usuAdm;
     }
 
-    public void setUsu_adm(char usu_adm) {
-        this.usu_adm = usu_adm;
+    public void setUsuAdm(boolean usuAdm) {
+        this.usuAdm = usuAdm;
     }
 
     public EnderecoEntity getEndereco() {

@@ -1,23 +1,21 @@
 package com.wearit.projeto.dto;
 
+import org.springframework.beans.BeanUtils;
 import com.wearit.projeto.entity.EnderecoEntity;
 import com.wearit.projeto.entity.UsuarioEntity;
-import org.springframework.beans.BeanUtils;
 
 public class UsuarioDTO {
     
-    private Long usu_id; // Identificador único do usuário
-    private String usu_nome; // Nome do usuário
-    private String usu_senha; // Senha do usuário
-    private char usu_adm; // Indica se o usuário é administrador (1 ou 0)
-    private EnderecoEntity endereco; // Relacionamento com o endereço
+    private Long usu_id;
+    private String usuNome;
+    private String usuSenha;
+    private boolean usuAdm;
+    private EnderecoEntity endereco;
 
-    // Construtor que aceita uma entidade
     public UsuarioDTO(UsuarioEntity usuario) {
         BeanUtils.copyProperties(usuario, this);
     }
 
-    // Construtor padrão
     public UsuarioDTO() {
     }
 
@@ -30,28 +28,28 @@ public class UsuarioDTO {
         this.usu_id = usu_id;
     }
 
-    public String getUsu_nome() {
-        return usu_nome;
+    public String getUsuNome() {
+        return usuNome;
     }
 
-    public void setUsu_nome(String usu_nome) {
-        this.usu_nome = usu_nome;
+    public void setUsuNome(String usuNome) {
+        this.usuNome = usuNome;
     }
 
-    public String getUsu_senha() {
-        return usu_senha;
+    public String getUsuSenha() {
+        return usuSenha;
     }
 
-    public void setUsu_senha(String usu_senha) {
-        this.usu_senha = usu_senha;
+    public void setUsuSenha(String usuSenha) {
+        this.usuSenha = usuSenha;
     }
 
-    public char getUsu_adm() {
-        return usu_adm;
+    public boolean isUsuAdm() {
+        return usuAdm;
     }
 
-    public void setUsu_adm(char usu_adm) {
-        this.usu_adm = usu_adm;
+    public void setUsuAdm(boolean usuAdm) {
+        this.usuAdm = usuAdm;
     }
 
     public EnderecoEntity getEndereco() {
