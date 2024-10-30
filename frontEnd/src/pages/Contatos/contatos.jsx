@@ -8,7 +8,7 @@ import FooterF from "../../layout/RodaPe";
 function Contatos() {
     return (
         <div>
-  <Footer nome="FRETE GRÁTIS ACIMA DE R$ 199" />  
+            <Footer nome="FRETE GRÁTIS ACIMA DE R$ 199" />
           <Header />
           <div>
             <Options />
