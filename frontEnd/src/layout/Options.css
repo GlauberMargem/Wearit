@@ -27,8 +27,9 @@
     transition: color 0.3s ease, transform 0.3s ease;
 }
 .nav-menu a:hover {
-    color: #ff6347;
-    transform: scale(1.1);
+    background: linear-gradient(to right, #4d4d4d, #000000 ,#000000,#4d4d4d); 
+    background-clip: text; 
+    -webkit-text-fill-color: transparent; 
 }
 @media (max-width: 650px) {
     .nav-menu {
