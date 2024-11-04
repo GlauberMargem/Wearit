@@ -19,7 +19,7 @@ function Home() {
 
   return (
     <div>
-      <Footer nome="SIGA-NOS NO INSTAGRAM @WEARIT." />
+            <Footer nome="FRETE GRÁTIS ACIMA DE R$ 199" />
       <Header />
       <div>
         <Options onSelectCategory={handleCategorySelect} />

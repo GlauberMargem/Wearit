@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './Header.css';
 import Logo from "../images/logo.png";
-import Search from "../images/pesquisa.png";
-import miniBar from "../images/mini-bar.png";
-import closeIcon from "../images/fechar.png"; 
-import user from "../images/usuario.png";
+import Search from "../images/pesquisa.svg";
+import miniBar from "../images/mini-bar.svg";
+import closeIcon from "../images/fechar.svg"; 
+import user from "../images/usuario.svg";
 import sacola from "../images/sacola1.png";
 import { Link } from 'react-router-dom';
 
