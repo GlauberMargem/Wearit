@@ -4,8 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.wearit.projeto.exception.UsuarioNotFoundException;
 import com.wearit.projeto.service.UsuarioService;
+import java.util.Map;
+import java.util.HashMap;
 
 @RestController
 @RequestMapping("/auth")
@@ -16,16 +17,19 @@ public class AuthController {
     private UsuarioService usuarioService;
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestParam String usuNome, @RequestParam String senha) {
-        if (usuarioService.autenticarUsuario(usuNome, senha)) {
-            return ResponseEntity.ok("Login bem-sucedido!");
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciais inválidas!");
-        }
-    }
+    public ResponseEntity<Map<String, String>> login(@RequestBody Map<String, String> credentials) {
+        String usuNome = credentials.get("usuNome");
+        String senha = credentials.get("senha");
 
-    @ExceptionHandler(UsuarioNotFoundException.class)
-    public ResponseEntity<String> handleUsuarioNotFoundException(UsuarioNotFoundException ex) {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+        boolean autenticado = usuarioService.autenticarUsuario(usuNome, senha);
+        Map<String, String> response = new HashMap<>();
+        
+        if (autenticado) {
+            response.put("message", "Login bem-sucedido!");
+            return ResponseEntity.ok(response);
+        } else {
+            response.put("error", "Credenciais inválidas!");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
+        }
     }
 }

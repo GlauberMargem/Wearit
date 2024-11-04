@@ -22,29 +22,18 @@ public class UsuarioService {
 
     public boolean autenticarUsuario(String nomeUsuario, String senha) {
         Optional<UsuarioEntity> usuarioOptional = usuarioRepository.findByUsuNome(nomeUsuario);
-        
-        if (usuarioOptional.isPresent()) {
-            UsuarioEntity usuario = usuarioOptional.get();
-            return passwordEncoder.matches(senha, usuario.getUsuSenha());
-        }
-        return false;
+        return usuarioOptional.isPresent() && passwordEncoder.matches(senha, usuarioOptional.get().getUsuSenha());
     }
 
-    public void salvarUsuario(UsuarioDTO usuarioDTO) {
+    public void inserir(UsuarioDTO usuarioDTO) {
         UsuarioEntity usuario = new UsuarioEntity(usuarioDTO);
         usuario.setUsuSenha(passwordEncoder.encode(usuarioDTO.getUsuSenha()));
         usuarioRepository.save(usuario);
     }
 
-    public void inserir(UsuarioDTO usuario) {
-        UsuarioEntity usuarioEntity = new UsuarioEntity(usuario);
-        usuarioEntity.setUsuSenha(passwordEncoder.encode(usuario.getUsuSenha()));
-        usuarioRepository.save(usuarioEntity);
-    }
-
-    public UsuarioDTO alterar(UsuarioDTO usuario) {
-        UsuarioEntity usuarioEntity = new UsuarioEntity(usuario);
-        return new UsuarioDTO(usuarioRepository.save(usuarioEntity));
+    public UsuarioDTO alterar(UsuarioDTO usuarioDTO) {
+        UsuarioEntity usuario = new UsuarioEntity(usuarioDTO);
+        return new UsuarioDTO(usuarioRepository.save(usuario));
     }
 
     public void excluir(Long id) {
@@ -57,10 +46,5 @@ public class UsuarioService {
         return usuarioRepository.findAll().stream()
                 .map(UsuarioDTO::new)
                 .toList();
-    }
-
-    public UsuarioDTO buscarPorId(Long id) {
-        return new UsuarioDTO(usuarioRepository.findById(id)
-                .orElseThrow(() -> new UsuarioNotFoundException("Usuário não encontrado")));
     }
 }

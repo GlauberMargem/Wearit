@@ -1,18 +1,18 @@
-// src/pages/Login/login.jsx
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from "../../layout/footer";
 import Header from '../../layout/Header';
 import Options from '../../layout/Options';
 import BottomMenu from '../../layout/BottomMenu';
 import FooterF from "../../layout/RodaPe";
-import React, { useState } from 'react';
 import './Login.css';
-import { Link } from 'react-router-dom';
-import { UsuarioService } from '../../../services/UsuarioService'; // Ajuste o caminho do import
+import { UsuarioService } from '../../../services/UsuarioService';
 
-const usuarioService = new UsuarioService(); // Instância do serviço
+const usuarioService = new UsuarioService();
 
 function Login() {
   const [popupMessage, setPopupMessage] = useState(null);
+  const navigate = useNavigate();
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -20,18 +20,17 @@ function Login() {
     const senha = event.target.password.value;
 
     try {
-      const response = await usuarioService.login({ nomeUsuario: usuario, senha }); // Use o método de login
+      const response = await usuarioService.login({ usuNome: usuario, senha });
 
-      // Verifique a estrutura da resposta aqui
-      if (response && response.status === 200) {
-        setPopupMessage("Login realizado com sucesso!");
-        // Redirecionar ou realizar outra ação após o login bem-sucedido
+      if (response.message) {
+        setPopupMessage(response.message);
+        setTimeout(() => navigate("/home"), 2000); // Redireciona após 2 segundos
       } else {
         setPopupMessage("Credenciais inválidas. Tente novamente.");
       }
     } catch (error) {
-      console.error("Erro ao fazer login:", error); // Log do erro para ajudar na depuração
-      setPopupMessage("Credenciais inválidas. Tente novamente.");
+      console.error("Erro ao fazer login:", error);
+      setPopupMessage(error.response ? error.response.data.error : "Erro ao conectar com o servidor.");
     }
   };
 
@@ -55,10 +54,8 @@ function Login() {
           <input type="password" id="password" name="password" placeholder="Digite sua senha" required />
 
           <div className="buttons">
-            <button type="submit" className="login-button">Entrar</button>
-            <Link to="/registrar" className="signup-button-link">
-              Inscreva-se
-            </Link>
+            <Link to= "/" type="submit" className="login-button">Entrar</Link>
+            <Link to="/registrar" className="signup-button-link">Inscreva-se</Link>
           </div>
         </form>
       </div>
