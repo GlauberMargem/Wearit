@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Header.css';
 import Logo from "../images/logo.png";
-import Search from "../images/pesquisa.svg";
+import Search from "../images/pesquisa.png";
 import miniBar from "../images/mini-bar.svg";
 import closeIcon from "../images/fechar.svg"; 
 import user from "../images/usuario.svg";

@@ -2,9 +2,9 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 .banner-img {
-    width: 95%;
+    width: 100%;
     height: auto;
 }

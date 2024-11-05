@@ -2,13 +2,13 @@ import { useNavigate } from 'react-router-dom';
 import './ProductList.css';
 
 const products = [
-  { imageUrl: '/images/roupa3.png', description: 'Camiseta Wearit. Preta', price: 'R$ 150,00', category: ['NEW', 'MASCULINO', 'ROUPAS'] },
-  { imageUrl: '/images/roupa4.png', description: 'Camiseta Wearit. Branca', price: 'R$ 150,00', category: ['NEW', 'FEMININO', 'ROUPAS'] },
-  { imageUrl: '/images/roupa5.png', description: 'Camiseta Wearit. Preta', price: 'R$ 150,00', category: ['NEW', 'FEMININO', 'ROUPAS'] },
-  { imageUrl: '/images/roupa6.png', description: 'Camiseta Wearit. Branca', price: 'R$ 150,00', category: ['NEW', 'FEMININO', 'ROUPAS'] },
-  { imageUrl: '/images/roupa1.png', description: 'Camiseta Wearit. Preta', price: 'R$ 150,00', category: ['POPULARES', 'MASCULINO', 'ROUPAS'] },
-  { imageUrl: '/images/roupa2.png', description: 'Camiseta Wearit. Branca', price: 'R$ 150,00', category: ['POPULARES', 'FEMININO', 'ROUPAS'] },
-  { imageUrl: '/images/roupa4.png', description: 'Camiseta Wearit. Branca', price: 'R$ 150,00', category: ['POPULARES', 'ROUPAS'] },
+  { imageUrl: '/images/roupa3.jpg', description: 'Camiseta Wearit. Preta', price: 'R$ 150,00', category: ['NEW', 'MASCULINO', 'ROUPAS'] },
+  { imageUrl: '/images/roupa4.jpg', description: 'Camiseta Wearit. Branca', price: 'R$ 150,00', category: ['NEW', 'FEMININO', 'ROUPAS'] },
+  { imageUrl: '/images/roupa5.jpg', description: 'Camiseta Wearit. Preta', price: 'R$ 150,00', category: ['NEW', 'FEMININO', 'ROUPAS'] },
+  { imageUrl: '/images/roupa6.jpg', description: 'Camiseta Wearit. Branca', price: 'R$ 150,00', category: ['NEW', 'FEMININO', 'ROUPAS'] },
+  { imageUrl: '/images/roupa1.jpg', description: 'Camiseta Wearit. Preta', price: 'R$ 150,00', category: ['POPULARES', 'MASCULINO', 'ROUPAS'] },
+  { imageUrl: '/images/roupa2.jpg', description: 'Camiseta Wearit. Branca', price: 'R$ 150,00', category: ['POPULARES', 'FEMININO', 'ROUPAS'] },
+  { imageUrl: '/images/roupa9.jpg', description: 'Camiseta Wearit. Branca', price: 'R$ 150,00', category: ['POPULARES', 'ROUPAS'] },
   { imageUrl: '/images/foto2.png', description: 'Moletom Wearit. Preto', price: 'R$ 250,00', category: ['POPULARES'] },
   { imageUrl: '/images/roupa17.png', description: 'Moletom Wearit. branco', price: 'R$ 250,00', category: ['POPULARES', 'ROUPAS'] },
   { imageUrl: '/images/foto2.png', description: 'Moletom Wearit. Preto', price: 'R$ 250,00', category: ['INVERNO', 'MASCULINO', 'ROUPAS'] },

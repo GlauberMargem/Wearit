@@ -1,9 +1,5 @@
-html, body {
-    overflow-x: hidden; /* Impede a rolagem horizontal */
-}
-
 .bottom-menu {
-    position: fixed; /* Mantenha o menu fixo na parte inferior */
+    position: fixed;
     bottom: 0;
     width: 100%; 
     height: 50px;
@@ -12,13 +8,12 @@ html, body {
     display: flex;
     justify-content: space-around; 
     align-items: center; 
-    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
-    transform: translateY(0); /* Garante que o menu não se mova */
+
 }
 
 @media (min-width: 650px) {
     .bottom-menu {
-        display: none; /* Esconde o menu em telas maiores */
+        display: none; 
     }
 }
 
@@ -49,3 +44,4 @@ html, body {
 .menu-option:hover .menu-icon {
     filter: invert(1);
 }
+
