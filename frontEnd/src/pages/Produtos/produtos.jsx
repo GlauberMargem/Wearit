@@ -28,10 +28,7 @@ function Produtos() {
         <div className="produto-descricao">
           <h2>{description}</h2>
           <p>{price}</p>
-          <div className="produto-cores">
-            <div className="cor preta"></div>
-            <div className="cor branca"></div>
-          </div>
+          
           <div className="produto-tamanhos">
             {['P', 'M', 'G', 'GG'].map(size => (
               <div key={size} className="tamanho-item">
@@ -40,7 +37,7 @@ function Produtos() {
             ))}
           </div>
           <button className="add-carrinho">
-            ADD CARRINHO
+            ADICIONE AO CARRINHO
           </button>
         </div>
       </div>

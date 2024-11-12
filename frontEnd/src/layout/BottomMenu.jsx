@@ -9,9 +9,6 @@ const BottomMenu = () => {
                 <img src="/icons/home1.png" alt="Opção 1" className="menu-icon" />
             </Link>
             <div className="menu-option">
-                <img src="/icons/desejo.png" alt="Opção 2" className="menu-icon" />
-            </div>
-            <div className="menu-option">
                 <img src="/icons/sacola.png" alt="Opção 3" className="menu-icon" />
             </div>
             <Link  to="/login" className="menu-option">

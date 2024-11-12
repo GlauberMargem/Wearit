@@ -1,70 +1,96 @@
 .produto-container {
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    margin: 20px 0;
-    height: 70vh;
-  }
-  
-  .produto-imagem {
+    padding: 0;
+    margin: 0;
+    height: 60vh;
+}
+
+.produto-imagem {
     width: 300px;
     height: auto;
-    margin-left: 20%;
-  }
-  
-  .produto-descricao {
-    margin-right: 50%;
-  }
-  h2 {
+    margin: 20px 100px;
+}
+
+.produto-descricao {
+    font-size: 16px;
+    margin: 55px 0;
+}
+
+.produto-descricao p{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h2 {
     margin: 10px 0;
-  }
-  
-  .produto-cores {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-    margin: 10px 0;
-  }
-  
-  .cor {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    margin: 10px 0;
-    cursor: pointer;
-  }
-  
-  .preta {
-    background-color: black;
-  }
-  
-  .branca {
-    background-color: white;
-    border: 1px solid #000;
-  }
-  
-  .produto-tamanhos {
+    font-weight: 500;
+}
+
+.produto-tamanhos {
     display: flex;
     gap: 15px;
     margin: 10px 0;
+}
+
+.tamanho-item {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
     cursor: pointer;
-  }
-  
-  .tamanho-item {
-    padding: 5px 15px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  
-  .add-carrinho {
-    width: 250px;
+}
+
+.tamanho-item:active {
+    background-color: #000000;
+    color: white;
+}
+
+.tamanho-item:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.add-carrinho {
+    width: 220px;
     background-color: #000;
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 10px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     margin-top: 10px;
-  }
-  
+    transition: 0.1s ease;
+}
+
+.add-carrinho:active {
+    transform: scale(0.95);  /* Efeito de "apertar" o botão */
+    background-color: #0a0a0a;
+}
+
+@media (max-width: 660px) {
+    .produto-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .produto-imagem {
+        width: 240px;
+        margin: 0;
+    }
+
+    .produto-tamanhos {
+        margin: 10px 0;
+        justify-content: space-between;
+    }
+
+    .produto-descricao {
+        margin: 0;
+        font-size: 14px;
+        text-align: center;
+    }
+    .add-carrinho{
+        margin: 0;
+    }
+}

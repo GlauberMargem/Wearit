@@ -1,30 +1,35 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import Footer from "../../layout/footer";
 import Header from '../../layout/Header';
 import Options from '../../layout/Options';
+import Footer from "../../layout/footer";
 import BottomMenu from '../../layout/BottomMenu';
 import FooterF from "../../layout/RodaPe";
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { UsuarioService } from '../../../services/UsuarioService'; // Supondo que o caminho esteja correto
 import './Login.css';
-import { UsuarioService } from '../../../services/UsuarioService';
 
-const usuarioService = new UsuarioService();
 
 function Login() {
-  const [popupMessage, setPopupMessage] = useState(null);
+  const [popupMessage, setPopupMessage] = useState("");
   const navigate = useNavigate();
 
+  // Função para lidar com o login
   const handleLogin = async (event) => {
     event.preventDefault();
     const usuario = event.target.usuario.value;
     const senha = event.target.password.value;
 
     try {
-      const response = await usuarioService.login({ usuNome: usuario, senha });
+      const response = await new UsuarioService().login({ usuNome: usuario, senha });
 
       if (response.message) {
         setPopupMessage(response.message);
-        setTimeout(() => navigate("/home"), 2000); // Redireciona após 2 segundos
+        setTimeout(() => {
+          // Armazenando o nome do usuário no localStorage
+          localStorage.setItem("nomeUsuario", usuario);
+          navigate("/"); // Redireciona para a página inicial
+        }, 2000);
       } else {
         setPopupMessage("Credenciais inválidas. Tente novamente.");
       }
@@ -34,41 +39,37 @@ function Login() {
     }
   };
 
-  const closePopup = () => {
-    setPopupMessage(null);
-  };
-
   return (
     <div>
-    <Footer nome="FRETE GRÁTIS ACIMA DE R$ 199" />                 <Header />
+      <Footer nome="FRETE GRÁTIS ACIMA DE R$ 199" />
+      <Header />
       <div>
         <Options />
       </div>
       <div className="login-container">
-        <h1>Login</h1>
-        <form className="login-form" onSubmit={handleLogin}>
-          <label htmlFor="usuario">Usuário</label>
-          <input type="text" id="usuario" name="usuario" placeholder="Digite seu nome de usuário" required />
-          <label htmlFor="password">Senha</label>
-          <input type="password" id="password" name="password" placeholder="Digite sua senha" required />
-
-          <div className="buttons">
-            <Link to= "/" type="submit" className="login-button">Entrar</Link>
-            <Link to="/registrar" className="signup-button-link">Inscreva-se</Link>
+        <form onSubmit={handleLogin} className="login-form">
+          <h2>Login</h2>
+          <input
+            type="text"
+            name="usuario"
+            placeholder="Nome de Usuário"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Senha"
+            required
+          />
+          <div className="button-group">
+            <button type="submit" className="cadastrar-button">Entrar</button>
+            <Link to="/registrar"><button type="button" className="login-button">Cadastrar</button></Link>
           </div>
+          {popupMessage && <p className="popup-message">{popupMessage}</p>}
         </form>
       </div>
       <FooterF />
       <BottomMenu />
-
-      {popupMessage && (
-        <div className="popup">
-          <div className="popup-content">
-            <h2>{popupMessage}</h2>
-            <button onClick={closePopup} className="close-button">Fechar</button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
