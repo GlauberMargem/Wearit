@@ -1,0 +1,228 @@
+.principal {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 3em;
+}
+
+.car-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+}
+
+.car-title {
+    font-weight: lighter;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3em;
+    margin: 0 20px;
+    display: block;
+}
+
+.produto-carrinho {
+    display: flex;
+    margin: 20px;
+    background-color: #eee;
+    border-radius: 16px;
+    width: 700px;
+}
+
+.prod-image {
+    border-radius: 9px;
+    width: 200px;
+    margin: 10px;
+}
+
+.prod-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.description {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px 5px;
+}
+
+
+.price {
+    font-weight: 400;
+    font-size: 22px;
+    margin: 20px 0;
+}
+
+.tamanho {
+    font-weight: bold;
+}
+
+.buttons {
+    margin: 80px 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons p {
+    background: rgb(221, 221, 221);
+    border: 1px solid black;
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
+    margin-top: 20px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.buttons button {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 5px 3px 2px rgba(0, 0, 0, 0.2);
+    padding: 10px 30px;
+    transition: all 0.2s ease;
+    width: 200px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 120px;
+}
+
+.buttons button:hover {
+    box-shadow: 5px 3px 2px rgba(0, 0, 0, 0.5);
+    transform: 0.05%;
+}
+
+.remove-item-button {
+    width: 50px;
+    background-color: rgb(40, 40, 40);
+    border: none;
+    border-radius: 0 16px 16px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.remove-item-button:hover {
+    background: rgb(0, 0, 0);
+}
+
+.error-mensage {
+    margin: 120px auto 20vw auto;
+    background-color: black;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 20px 50px;
+}
+
+/* ------------------- MOBILE --------------------------- */
+
+@media (max-width: 660px) {
+
+    .car-container {
+        margin-bottom: 200px;
+    }
+
+    .principal {
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        margin: -50px 0 0 0;
+    }
+
+    .car-title {
+        font-size: 2em;
+        text-align: center;
+        margin: 0;
+    }
+
+    .buttons {
+        display: flex;
+        width: 80%;
+    }
+
+    .buttons button {
+        font-size: 14px;
+        width: 100%;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 4px;
+    }
+
+    .produto-carrinho {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #eee;
+        border-radius: 16px;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .prod-image {
+        width: 200px;
+        margin: 10px;
+        border-radius: 9px;
+    }
+
+    .prod-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .description {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .price {
+        font-size: 16px;
+        margin: 5px;
+    }
+
+    .tamanho {
+        font-weight: bold;
+    }
+
+    .remove-item-button {
+        width: 100%;
+        height: 40px;
+        background-color: #333;
+        border: none;
+        border-radius: 0 0 16px 16px;
+        margin-bottom: 10px;
+    }
+
+    .remove-item-button:hover {
+        background: rgb(0, 0, 0);
+    }
+
+    .error-mensage {
+        margin: 20px 0;
+        font-size: 18px;
+        text-align: center;
+        padding: 15px 20px;
+        background-color: #000000;
+        color: white;
+        font-weight: bold;
+    }
+
+    .buttons button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
