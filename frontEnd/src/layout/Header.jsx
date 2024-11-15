@@ -52,7 +52,9 @@ function Header() {
             <img src={user} alt="Usuario" />
           </Link>
           <div className="sacola">
+          <Link to="/carrinho">
             <img src={sacola} alt="Sacola" />
+            </Link>
           </div>
 
           {/* Mostrar o botão de logout apenas quando nomeUsuario estiver definido */}

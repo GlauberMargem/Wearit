@@ -11,10 +11,11 @@ header {
 .user{
     color: #000;
     font-size: 28px;
+    transition: color 0.3s ease;
 }
 
 .user:hover{
-    color: #696969;
+    color: #5e5e63;
 }
 
 .mini-bar {
@@ -66,6 +67,7 @@ header {
     font-size: 16px;
     font-weight: 500;
     border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 .logout-button:hover {
