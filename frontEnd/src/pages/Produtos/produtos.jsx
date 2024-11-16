@@ -1,12 +1,11 @@
-
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom'; // Alterado aqui
+import { useLocation, useNavigate } from 'react-router-dom';
 import Footer from "../../layout/Footer";
 import Header from '../../layout/Header';
 import Options from '../../layout/Options';
 import BottomMenu from '../../layout/BottomMenu';
 import FooterF from "../../layout/RodaPe";
-import { useCart } from '../../context/CartContext'; // Importe o contexto do carrinho
+import { useCart } from '../../context/CartContext';
 import './produtos.css';
 
 function Produtos() {
@@ -18,7 +17,7 @@ function Produtos() {
   const [selectedSize, setSelectedSize] = useState(null);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
-  const { addToCart } = useCart(); // Acesso à função addToCart do contexto do carrinho
+  const { addToCart } = useCart();
 
   const handleSizeSelect = (size) => {
     setSelectedSize(size);
@@ -32,8 +31,8 @@ function Produtos() {
         price,
         size: selectedSize,
       };
-      addToCart(product); // Adiciona o produto ao carrinho
-      setIsPopupVisible(true); // Exibe o popup
+      addToCart(product);
+      setIsPopupVisible(true);
     } else {
       alert("Por favor, selecione um tamanho antes de adicionar ao carrinho.");
     }
@@ -45,7 +44,7 @@ function Produtos() {
 
   const handleGoToCart = () => {
     setIsPopupVisible(false);
-    navigate('/carrinho'); // Navega para a página de carrinho
+    navigate('/carrinho');
   };
 
   return (
@@ -67,20 +66,19 @@ function Produtos() {
           </div>
           <hr className="popup-divider" />
           <div className="popup-actions">
-            <button onClick={handleGoToCart} className="go-to-cart, cart-botton">IR PARA O CARRINHO</button>
-            <button onClick={handleContinueShopping} className="continue-shopping, cart-botton">CONTINUE COMPRANDO</button>
+            <button onClick={handleGoToCart} className="go-to-cart cart-botton">IR PARA O CARRINHO</button>
+            <button onClick={handleContinueShopping} className="continue-shopping cart-botton">CONTINUE COMPRANDO</button>
           </div>
         </div>
       )}
 
       <div className="produto-container">
-        <div>
+        <div className='bug'>
           <img src={imageUrl} alt={description} className="produto-imagem" />
         </div>
         <div className="produto-descricao">
           <h2>{description}</h2>
           <p>{price}</p>
-
           <div className="produto-tamanhos">
             {['P', 'M', 'G', 'GG'].map(size => (
               <div
@@ -92,7 +90,6 @@ function Produtos() {
               </div>
             ))}
           </div>
-
           <button onClick={handleAddToCart} className="add-carrinho">
             ADICIONE AO CARRINHO
           </button>

@@ -11,7 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping(value = "/usuario")
-@CrossOrigin(origins = "http://localhost:5174") // Permite CORS para esta origem
+@CrossOrigin(origins = "http://localhost:5173") // Permite CORS para esta origem
 public class UsuarioController {
 
     @Autowired

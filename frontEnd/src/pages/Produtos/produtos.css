@@ -2,18 +2,21 @@
     display: flex;
     padding: 0;
     margin: 0;
-    height: 60vh;
+    height: 100vh;
 }
+/* .bug {
+    height: 30vh;
+} */
 
 .produto-imagem {
     width: 300px;
-    height: auto;
     margin: 20px 100px;
 }
 
 .produto-descricao {
     font-size: 16px;
     margin: 55px 0;
+    height: 300px;
 }
 
 .produto-descricao p{
@@ -44,11 +47,16 @@ h2 {
 }
 
 .tamanho-item:active {
-    background-color: #000000;
+    background-color: #a2a2a4;
     color: white;
 }
 
 .tamanho-item:hover {
+    background-color: #a2a2a4;
+    color: rgb(0, 0, 0);
+}
+
+.tamanho-item.selected {
     background-color: #000000;
     color: white;
 }

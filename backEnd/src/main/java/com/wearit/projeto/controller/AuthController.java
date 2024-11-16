@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "http://localhost:5174") // Permite CORS para esta origem
+@CrossOrigin(origins = "http://localhost:5173") // Permite CORS para esta origem
 public class AuthController {
 
     @Autowired

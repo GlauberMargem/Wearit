@@ -5,6 +5,10 @@
     margin-top: 3em;
 }
 
+.altura {
+    height: 30vh;
+}
+
 .car-container {
     height: 100%;
     display: flex;

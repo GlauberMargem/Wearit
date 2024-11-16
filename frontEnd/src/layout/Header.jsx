@@ -31,6 +31,7 @@ function Header() {
     localStorage.removeItem("nomeUsuario");
     setNomeUsuario(""); // Limpa o nome do usuário
     setLogoutVisible(false); // Esconde o botão de logout após o logout
+    window.location.reload();
   };
 
   return (
