@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Footer from "../../layout/Footer";
 import Header from '../../layout/Header';
@@ -32,7 +32,17 @@ function Produtos() {
         size: selectedSize,
       };
       addToCart(product);
-      setIsPopupVisible(true);
+      setIsPopupVisible(true); // Exibe o popup
+
+      // Verifica o tamanho da tela
+      const isMobile = window.innerWidth < 660;
+
+      if (isMobile) {
+        // No mobile, o popup desaparece após 2 segundos
+        setTimeout(() => {
+          setIsPopupVisible(false);
+        }, 2000);
+      }
     } else {
       alert("Por favor, selecione um tamanho antes de adicionar ao carrinho.");
     }
@@ -54,7 +64,7 @@ function Produtos() {
       <Options />
 
       {isPopupVisible && (
-        <div className="carrinho_popup">
+        <div className={`carrinho_popup ${isPopupVisible ? '' : 'hide'}`}>
           <h2 className="header_carrinho">ADICIONADO COM SUCESSO</h2>
           <hr className="popup-divider" />
           <div className="descricao_popup">
@@ -73,7 +83,7 @@ function Produtos() {
       )}
 
       <div className="produto-container">
-        <div className='bug'>
+        <div>
           <img src={imageUrl} alt={description} className="produto-imagem" />
         </div>
         <div className="produto-descricao">

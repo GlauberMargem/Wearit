@@ -3,19 +3,19 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto;
 }
 
-footer h1, footer h2 {
-    font-size: small;
+footer h1 {
+    font-size: medium;
     color: white;
     padding: 0.5em 0;
     font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin: 0;
-    text-align: center;
 }
 
 footer h2 {
+    font-size: small;
+    margin: 0;
     font-size: 14px;
     font-weight: lighter;
     color: #ff2525;
@@ -23,7 +23,8 @@ footer h2 {
 
 @media (max-width: 650px) {
     footer h1 {
-        font-size: 18px;
+        font-size: 14px;
+        font-weight: 400;
     }
 
     footer h2 {

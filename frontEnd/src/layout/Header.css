@@ -8,13 +8,13 @@ header {
     position: relative;
 }
 
-.user{
+.user {
     color: #000;
     font-size: 22px;
     transition: color 0.3s ease;
 }
 
-.user:hover{
+.user:hover {
     color: #5e5e63;
 }
 
@@ -58,7 +58,7 @@ header {
 
 .logout-button {
     display: block;
-    margin:0 0 0 10px;
+    margin: 0 0 0 10px;
     background-color: #f5f5f5;
     border: none;
     color: #000000;
@@ -121,7 +121,7 @@ header {
 .side-menu-logout {
     background: black;
     color: rgb(255, 255, 255);
-    border:none;
+    border: none;
     border-radius: 4px;
     margin: 0;
     padding: 10px;
@@ -152,6 +152,7 @@ header {
 }
 
 @media (max-width: 660px) {
+
     .user img,
     .sacola img,
     .logout-button,

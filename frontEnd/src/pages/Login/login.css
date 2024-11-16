@@ -52,7 +52,8 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none; /* Remove underline no Link */
+  text-decoration: none;
+  /* Remove underline no Link */
 }
 
 .login-button {
@@ -66,7 +67,8 @@ input {
   border: 1px solid #000;
 }
 
-button:hover, .signup-button-link:hover {
+button:hover,
+.signup-button-link:hover {
   opacity: 0.8;
 }
 
@@ -88,50 +90,65 @@ button:hover, .signup-button-link:hover {
 
 /* Mensagem de sucesso */
 .popup-message.success {
-  background-color: #28a745;  /* Verde */
+  background-color: #28a745;
+  /* Verde */
   color: #fff;
   border: 2px solid #218838;
 }
 
 /* Mensagem de erro */
 .popup-message.error {
-  background-color: #dc3545;  /* Vermelho */
+  background-color: #dc3545;
+  /* Vermelho */
   color: #fff;
   border: 2px solid #c82333;
 }
 
 /* Efeito de desaparecer suavemente após 2 segundos */
-.popup-message.success, .popup-message.error {
+.popup-message.success,
+.popup-message.error {
   animation: fadeOut 3s forwards;
 }
 
 @keyframes fadeOut {
-0% {
-  opacity: 1;
-}
-/* 25%{
+  0% {
+    opacity: 1;
+  }
+
+  /* 25%{
   opacity: 0.7;
 }
 50%{
   opacity: 0.3;
 } */
-100% {
-  opacity: 0;
-}
+  100% {
+    opacity: 0;
+  }
 }
 
 .logged-in-message {
-  background-color: #4CAF50; /* Cor de fundo verde */
-  color: white; /* Texto branco */
-  padding: 15px; /* Espaçamento interno */
-  margin-bottom: 20px; /* Espaço abaixo da mensagem */
-  border-radius: 5px; /* Bordas arredondadas */
-  font-size: 16px; /* Tamanho da fonte */
-  font-weight: bold; /* Negrito para o texto */
-  text-align: center; /* Centraliza o texto */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-  width: 100%; /* Largura completa */
-  max-width: 400px; /* Limite de largura para não ficar muito largo */
-  margin: 20px auto; /* Alinha a mensagem no centro horizontalmente */
+  background-color: #4CAF50;
+  /* Cor de fundo verde */
+  color: white;
+  /* Texto branco */
+  padding: 15px;
+  /* Espaçamento interno */
+  margin-bottom: 20px;
+  /* Espaço abaixo da mensagem */
+  border-radius: 5px;
+  /* Bordas arredondadas */
+  font-size: 16px;
+  /* Tamanho da fonte */
+  font-weight: bold;
+  /* Negrito para o texto */
+  text-align: center;
+  /* Centraliza o texto */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Sombra suave */
+  width: 100%;
+  /* Largura completa */
+  max-width: 400px;
+  /* Limite de largura para não ficar muito largo */
+  margin: 20px auto;
+  /* Alinha a mensagem no centro horizontalmente */
 }
-

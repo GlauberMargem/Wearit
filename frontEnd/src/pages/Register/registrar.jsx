@@ -33,7 +33,7 @@ function Registrar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Montar o corpo da requisição com base nos dados do formulário
     const usuarioData = {
       usuNome: formData.usuario,
@@ -45,7 +45,7 @@ function Registrar() {
         end_cep: formData.cep
       }
     };
-    
+
 
     // Chamar o serviço para cadastrar o usuário
     const usuarioService = new UsuarioService();
@@ -78,7 +78,7 @@ function Registrar() {
 
   return (
     <div>
-         <Footer nome="FRETE GRÁTIS EM COMPRAS A PARTIR DE R$ 199,00" />           
+      <Footer nome="FRETE GRÁTIS EM COMPRAS A PARTIR DE R$ 199,00" />
       <Header />
       <div>
         <Options />

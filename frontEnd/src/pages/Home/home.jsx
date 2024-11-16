@@ -20,19 +20,19 @@ function Home() {
 
   return (
     <div>
-      <Footer nome="FRETE GRÁTIS EM COMPRAS A PARTIR DE R$ 199,00" />        
-      <Header/>
+      <Footer nome="FRETE GRÁTIS EM COMPRAS A PARTIR DE R$ 199,00" />
+      <Header />
       <div>
         <Options onSelectCategory={handleCategorySelect} />
       </div>
-      <Banner/>
+      <Banner />
       <Footer nome2="15% DE DESCONTO NA PRIMEIRA COMPRA COM O CÓDIGO: PRIMEIRA15" />
       <div>
         <CategoryBox categorybox={categorybox} onSelectCategory={handleCategorySelect} />
       </div>
       <ProductList selectedCategory={selectedCategory} />
-      <FooterF/>
-      <BottomMenu/>
+      <FooterF />
+      <BottomMenu />
     </div>
   );
 }

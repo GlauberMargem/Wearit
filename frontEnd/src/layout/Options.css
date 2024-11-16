@@ -21,7 +21,8 @@
 .nav-menu a {
     text-decoration: none;
     color: #000;
-    transition: color 1s ease, text-shadow 0.5s ease; /* Suaviza a transição do text-shadow */
+    transition: color 1s ease, text-shadow 0.5s ease;
+    /* Suaviza a transição do text-shadow */
 }
 
 .nav-menu a:hover {
