@@ -8,7 +8,6 @@ export const AuthProvider = ({ children }) => {
   // Estado de autenticação, que pode ser manipulado conforme a lógica de login/logout
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Funções para login e logout
   const login = () => setIsAuthenticated(true);
   const logout = () => setIsAuthenticated(false);
 

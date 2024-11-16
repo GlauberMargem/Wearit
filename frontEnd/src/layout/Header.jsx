@@ -37,12 +37,12 @@ function Header() {
   return (
     <>
       <header>
-          <button className="mini-bar" onClick={toggleMenu}>
-            <img src={miniBar} alt="Menu" />
-          </button>
-          <Link to="/">
-            <img className="logo" src={Logo} alt="Logo" />
-          </Link>
+        <button className="mini-bar" onClick={toggleMenu}>
+          <img src={miniBar} alt="Menu" />
+        </button>
+        <Link to="/">
+          <img className="logo" src={Logo} alt="Logo" />
+        </Link>
         <div className="user-info">
           <span className="username">
             <Link to="/login" className="user">
@@ -53,8 +53,8 @@ function Header() {
             <img src={user} alt="Usuario" />
           </Link>
           <div className="sacola">
-          <Link to="/carrinho">
-            <img src={sacola} alt="Sacola" />
+            <Link to="/carrinho">
+              <img src={sacola} alt="Sacola" />
             </Link>
           </div>
 

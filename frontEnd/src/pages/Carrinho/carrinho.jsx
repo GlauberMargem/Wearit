@@ -25,13 +25,13 @@ function Carrinho() {
     // Função para gerar a mensagem para o WhatsApp com as informações do carrinho
     const generateMessage = () => {
         let message = "Olá, gostaria de finalizar minha compra! Aqui estão os detalhes do meu carrinho:\n\n";
-        
+
         cart.forEach(item => {
             message += `Produto: ${item.description}\nTamanho: ${item.size}\nPreço: ${item.price}\n\n`;
         });
-        
+
         message += `Total: R$ ${calculateTotal()}\n\nObrigado!`;
-        
+
         // Codifica a mensagem para ser usada no link do WhatsApp
         return encodeURIComponent(message);
     };
@@ -66,9 +66,9 @@ function Carrinho() {
                         <Link to="../"> <button>CONTINUAR COMPRANDO</button></Link>
                         {isAuthenticated ? (
                             // Exibe o botão "FINALIZAR COMPRA" se o usuário estiver logado
-                            <a 
+                            <a
                                 href={`https://wa.me/557588899991?text=${generateMessage()}`}
-                                target="_blank" 
+                                target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 <button>FINALIZAR COMPRA</button>
@@ -84,7 +84,7 @@ function Carrinho() {
                 )}
             </div>
             <div className='altura'></div>
-            <FooterF className='footer'/>
+            <FooterF className='footer' />
             <BottomMenu />
         </div>
     );

@@ -133,10 +133,6 @@
 
 @media (max-width: 660px) {
 
-    .car-container {
-        margin-bottom: 200px;
-    }
-
     .principal {
         padding: 0 10px;
         display: flex;
@@ -175,7 +171,7 @@
     }
 
     .prod-image {
-        width: 200px;
+        width: 180px;
         margin: 10px;
         border-radius: 9px;
     }
@@ -208,7 +204,7 @@
         background-color: #333;
         border: none;
         border-radius: 0 0 16px 16px;
-        margin-bottom: 10px;
+
     }
 
     .remove-item-button:hover {

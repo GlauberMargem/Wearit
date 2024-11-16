@@ -10,14 +10,14 @@ function Feminino() {
 
     return (
         <div>
-    <Footer nome="FRETE GRÁTIS EM COMPRAS A PARTIR DE R$ 199,00" /> <Header />
+            <Footer nome="FRETE GRÁTIS EM COMPRAS A PARTIR DE R$ 199,00" /> <Header />
             <div>
                 <Options />
             </div>
             {/* Exibe a lista de produtos filtrados pela categoria "MASCULINO" */}
             <ProductList selectedCategory={selectedCategory} />
             <FooterF />
-            <BottomMenu /> 
+            <BottomMenu />
         </div>
     );
 }

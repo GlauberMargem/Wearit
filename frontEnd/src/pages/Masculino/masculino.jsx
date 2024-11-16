@@ -10,7 +10,7 @@ function Masculino() {
 
     return (
         <div>
-             <Footer nome="FRETE GRÁTIS EM COMPRAS A PARTIR DE R$ 199,00" />           
+            <Footer nome="FRETE GRÁTIS EM COMPRAS A PARTIR DE R$ 199,00" />
             <Header />
             <div>
                 <Options />
@@ -18,7 +18,7 @@ function Masculino() {
             {/* Exibe a lista de produtos filtrados pela categoria "MASCULINO" */}
             <ProductList selectedCategory={selectedCategory} />
             <FooterF />
-            <BottomMenu /> 
+            <BottomMenu />
         </div>
     );
 }

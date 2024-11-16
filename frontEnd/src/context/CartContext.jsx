@@ -1,9 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 
-// Criando o contexto para o carrinho
 const CartContext = createContext();
 
-// Provedor do carrinho
 export const CartProvider = ({ children }) => {
   // Estado inicializado com Local Storage
   const [cart, setCart] = useState(() => {
