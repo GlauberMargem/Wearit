@@ -1,0 +1,36 @@
+.navigation-section {
+    width: 100%;
+    padding: 30px 0;
+}
+
+.nav-menu {
+    width: 100%;
+}
+
+.nav-menu ul {
+    font-weight: bold;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-menu li {
+    font-size: clamp(1.4em, 2vw, 1.8em);
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #000;
+    transition: color 1s ease, text-shadow 0.5s ease; /* Suaviza a transição do text-shadow */
+}
+
+.nav-menu a:hover {
+    color: #1f1f1f;
+    text-shadow: 0 0 100px rgba(0, 0, 0, 0.3), 0 0 80px rgba(0, 0, 0, 0.3), 0 0 50px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 650px) {
+    .nav-menu {
+        display: none;
+    }
+}

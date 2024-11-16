@@ -1,0 +1,137 @@
+/* Estilo para a tela de login */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  background-color: #FFF;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #000;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input {
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-button,
+.signup-button-link {
+  height: 45px;
+  width: 45%;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none; /* Remove underline no Link */
+}
+
+.login-button {
+  background-color: #000;
+  color: #fff;
+}
+
+.signup-button-link {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+button:hover, .signup-button-link:hover {
+  opacity: 0.8;
+}
+
+/* Estilo para as mensagens de sucesso e erro */
+.popup-message {
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+  max-width: 400px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mensagem de sucesso */
+.popup-message.success {
+  background-color: #28a745;  /* Verde */
+  color: #fff;
+  border: 2px solid #218838;
+}
+
+/* Mensagem de erro */
+.popup-message.error {
+  background-color: #dc3545;  /* Vermelho */
+  color: #fff;
+  border: 2px solid #c82333;
+}
+
+/* Efeito de desaparecer suavemente após 2 segundos */
+.popup-message.success, .popup-message.error {
+  animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+0% {
+  opacity: 1;
+}
+/* 25%{
+  opacity: 0.7;
+}
+50%{
+  opacity: 0.3;
+} */
+100% {
+  opacity: 0;
+}
+}
+
+.logged-in-message {
+  background-color: #4CAF50; /* Cor de fundo verde */
+  color: white; /* Texto branco */
+  padding: 15px; /* Espaçamento interno */
+  margin-bottom: 20px; /* Espaço abaixo da mensagem */
+  border-radius: 5px; /* Bordas arredondadas */
+  font-size: 16px; /* Tamanho da fonte */
+  font-weight: bold; /* Negrito para o texto */
+  text-align: center; /* Centraliza o texto */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  width: 100%; /* Largura completa */
+  max-width: 400px; /* Limite de largura para não ficar muito largo */
+  margin: 20px auto; /* Alinha a mensagem no centro horizontalmente */
+}
+
