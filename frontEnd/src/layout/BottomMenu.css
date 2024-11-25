@@ -1,51 +1,30 @@
-html, body {
-    overflow-x: hidden; /* Impede a rolagem horizontal */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    overflow-x: hidden;
 }
 
 .bottom-menu {
-    position: fixed; /* Mantenha o menu fixo na parte inferior */
+    position: fixed;
     bottom: 0;
-    width: 100%; 
+    width: 100%;
     height: 50px;
-    background-color: black; 
-    left: 0; 
+    background-color: black;
     display: flex;
-    justify-content: space-around; 
-    align-items: center; 
-    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
-    transform: translateY(0); /* Garante que o menu não se mova */
-}
-
-@media (min-width: 650px) {
-    .bottom-menu {
-        display: none; /* Esconde o menu em telas maiores */
-    }
-}
-
-.menu-option {
-    width: 70px; 
-    height: 40px; 
-    background-color: black; 
-    color: white; 
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    border-radius: 50px;
-    transition: background-color 0.3s; 
-}
-
-.menu-option:hover {
-    background-color: white; 
-    color: black; 
+    justify-content: space-around;
+    align-items: center;
 }
 
 .menu-icon {
     height: 30px;
-    margin-right: 5px; 
-    object-fit: contain; 
-    transition: filter 0.3s; 
 }
 
-.menu-option:hover .menu-icon {
-    filter: invert(1);
+@media (min-width: 650px) {
+    .bottom-menu {
+        display: none;
+    }
 }

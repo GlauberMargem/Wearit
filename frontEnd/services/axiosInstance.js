@@ -2,5 +2,7 @@
 import axios from 'axios';
 
 export const axiosInstance = axios.create({
-  baseURL: 'http://localhost:8080' // Certifique-se de que o backend esteja rodando aqui
+  baseURL: 'http://localhost:8080' // Certifique-se de que o backend esteja rodando nessa URL e porta
 });
+
+

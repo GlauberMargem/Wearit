@@ -1,81 +1,112 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.css';
 import Logo from "../images/logo.png";
-import Search from "../images/pesquisa.svg";
 import miniBar from "../images/mini-bar.svg";
-import closeIcon from "../images/fechar.svg"; 
+import closeIcon from "../images/fechar.svg";
 import user from "../images/usuario.svg";
 import sacola from "../images/sacola1.png";
 import { Link } from 'react-router-dom';
 
 function Header() {
-  const [menuOpen, setMenuOpen] = useState(false); 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [nomeUsuario, setNomeUsuario] = useState("");
+  const [logoutVisible, setLogoutVisible] = useState(false); // Estado para controlar visibilidade do logout
+
+  useEffect(() => {
+    const nome = localStorage.getItem("nomeUsuario");
+    if (nome) {
+      setNomeUsuario(nome);
+    }
+  }, []);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen); // Alterna o estado do menu
+    setMenuOpen(!menuOpen);
+  };
+
+  const toggleLogout = () => {
+    setLogoutVisible(!logoutVisible); // Alterna a visibilidade do botão de logout
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("nomeUsuario");
+    setNomeUsuario(""); // Limpa o nome do usuário
+    setLogoutVisible(false); // Esconde o botão de logout após o logout
+    window.location.reload();
   };
 
   return (
     <>
       <header>
-        <div>
         <button className="mini-bar" onClick={toggleMenu}>
           <img src={miniBar} alt="Menu" />
         </button>
-        </div>
-        <div> 
-          <Link to="/" className="logo">
-            <img src={Logo} alt="Logo" />
-          </Link>
-        </div>
-        <div>
-          <input className='typeSearch' type="text" placeholder="Pesquisar" />
-          <div className="search">
-            <img src={Search} alt="Search" />
-          </div>
-          <Link to="/login" className='user'>
+        <Link to="/">
+          <img className="logo" src={Logo} alt="Logo" />
+        </Link>
+        <div className="user-info">
+          <Link to="/login" className="user">
             <img src={user} alt="Usuario" />
           </Link>
-          <div className='sacola'>
-            <img src={sacola} alt="Sacola" />
+          <span className="username">
+            <Link to="/login" className="user">
+              {nomeUsuario || "LOGIN"}
+            </Link>
+          </span>
+          <div className="sacola">
+            <Link to="/carrinho">
+              <img src={sacola} alt="Sacola" />
+            </Link>
           </div>
+
+          {/* Mostrar o botão de logout apenas quando nomeUsuario estiver definido */}
+          {nomeUsuario && (
+            <button onClick={handleLogout} className="logout-button">
+              LOGOUT
+            </button>
+          )}
         </div>
-        
       </header>
+
 
       {/* Menu lateral */}
       <div className={`side-menu ${menuOpen ? 'open' : ''}`}>
-        <img 
-          src={closeIcon} 
-          alt="Close" 
-          className="close-icon" 
-          onClick={toggleMenu} // Fecha o menu ao clicar no ícone de fechar
+        <img
+          src={closeIcon}
+          alt="Close"
+          className="close-icon"
+          onClick={toggleMenu}
         />
+        {nomeUsuario && (
+          <div className="side-menu-username">
+            <span className='nome-usu'> USUÁRIO: {nomeUsuario}</span>
+          </div>
+        )}
         <ul className="menu-options">
           <li className="menu-item">
             <Link to="/roupas">
-              <span>ROUPAS</span>
+              <div>ROUPAS</div>
             </Link>
-            <div className="menu-line"></div>
           </li>
+
           <li className="menu-item">
             <Link to="/masculino">
-              <span>MASCULINO</span>
+              <div>MASCULINO</div>
             </Link>
-            <div className="menu-line"></div>
           </li>
+
           <li className="menu-item">
             <Link to="/feminino">
-              <span>FEMININO</span>
+              <div>FEMININO</div>
             </Link>
-            <div className="menu-line"></div>
           </li>
-          <li className="menu-item">
-            <Link to="/contatos">
-              <span>CONTATO</span>
-            </Link>
-            <div className="menu-line"></div>
-          </li>
+
+          {nomeUsuario && (
+            <li className="menu-item">
+              <button onClick={handleLogout} className="side-menu-logout">
+                LOGOUT
+              </button>
+            </li>
+          )}
         </ul>
       </div>
     </>

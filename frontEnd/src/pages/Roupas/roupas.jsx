@@ -1,4 +1,4 @@
-import Footer from "../../layout/footer"
+import Footer from "../../layout/Footer"
 import Header from '../../layout/Header';
 import Options from '../../layout/Options';
 import BottomMenu from '../../layout/BottomMenu';
@@ -10,7 +10,7 @@ function Roupas() {
 
     return (
         <div>
-            <Footer nome="FRETE GRÁTIS ACIMA DE R$ 199" />
+            <Footer nome="FRETE GRÁTIS EM COMPRAS A PARTIR DE R$ 199,00" />
             <Header />
             <div>
                 <Options />
@@ -18,7 +18,7 @@ function Roupas() {
             {/* Exibe a lista de produtos filtrados pela categoria "MASCULINO" */}
             <ProductList selectedCategory={selectedCategory} />
             <FooterF />
-            <BottomMenu /> 
+            <BottomMenu />
         </div>
     );
 }

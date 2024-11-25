@@ -1,4 +1,5 @@
-import Footer from "../../layout/footer";
+import './home.css';
+import Footer from "../../layout/Footer";
 import Header from '../../layout/Header';
 import Options from '../../layout/Options';
 import Banner from '../../layout/Banner';
@@ -19,13 +20,13 @@ function Home() {
 
   return (
     <div>
-            <Footer nome="FRETE GRÁTIS ACIMA DE R$ 199" />
+      <Footer nome="FRETE GRÁTIS EM COMPRAS A PARTIR DE R$ 199,00" />
       <Header />
       <div>
         <Options onSelectCategory={handleCategorySelect} />
       </div>
       <Banner />
-      <Footer nome="15% de desconto para novos clientes use o código: wnew 15" />
+      <Footer nome2="15% DE DESCONTO NA PRIMEIRA COMPRA COM O CÓDIGO: PRIMEIRA15" />
       <div>
         <CategoryBox categorybox={categorybox} onSelectCategory={handleCategorySelect} />
       </div>
