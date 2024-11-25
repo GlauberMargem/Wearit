@@ -116,18 +116,21 @@ h2 {
     width: 90%;
     max-width: 400px;
     padding: 15px;
-    background-color: #aaaaaa;
+    background-color: #fff;
     color: rgb(0, 0, 0);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 }
 
+.header_carrinho {
+    border-bottom: solid 1px lightgray;
+    width: 100%
+  }
 .carrinho_popup.hide {
     opacity: 0;
     pointer-events: none;
@@ -226,4 +229,19 @@ h2 {
     .carrinho_popup {
         display: flex;
     }
+}
+
+.product-item {
+    box-shadow: 0px 10px 42px -27px rgba(54, 54, 54, 0.4);
+    border-radius: 12px;
+    padding: 10px;
+    border: solid 1px #f7f7f7;
+}
+
+.product-item:hover {
+    transform: scale(103%);
+}
+
+.product-item {
+    transition: 0.2s ease;
 }

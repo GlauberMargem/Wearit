@@ -42,46 +42,52 @@ function Carrinho() {
             <Header />
             <div className='principal'>
                 <div className='car-container'>
-                    <h1 className='car-title'>🛒 SEU CARRINHO</h1>
-                    {cart.length === 0 ? (
-                        <p className='error-mensage'>O CARRINHO ESTÁ VAZIO.</p>
-                    ) : (
-                        cart.map((item, index) => (
-                            <div key={index} className="produto-carrinho">
-                                <img className='prod-image' src={item.imageUrl} alt={item.description} />
-                                <div className='prod-info'>
-                                    <p className='description'>{item.description}</p>
-                                    <p className='price'>{item.price}</p>
-                                    <p className='tamanho'>Tamanho: {item.size}</p>
-                                </div>
-                                {/* Botão para remover o item individual */}
-                                <button onClick={() => removeItem(index)} className="remove-item-button">🗑️</button>
+                    <h1 className='car-title'>CARRINHO</h1>
+
+                    {cart.length > 0 && (
+                        <div className='buttons'>
+                            <div className='subbuttons'>
+                                <button onClick={clearCart}>LIMPAR CARRINHO</button>
+                                <Link to="../"><button>CONTINUAR COMPRANDO</button></Link>
+                                {isAuthenticated ? (
+                                    // Exibe o botão "FINALIZAR COMPRA" se o usuário estiver logado
+                                    <a
+                                        href={`https://wa.me/557588899991?text=${generateMessage()}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"><button>FINALIZAR COMPRA</button>
+                                    </a>
+                                ) : (
+                                    // Exibe o botão "CADASTRE-SE" caso o usuário não esteja logado
+                                    <Link to="/registrar">
+                                        <button>CADASTRE-SE</button>
+                                    </Link>
+                                )}
                             </div>
-                        ))
+                            <div className='total'>
+                                <p>TOTAL: R$ {calculateTotal()}</p>
+                            </div>
+                        </div>
                     )}
-                </div>
-                {cart.length > 0 && (
-                    <div className='buttons'>
-                        <button onClick={clearCart}>LIMPAR CARRINHO</button>
-                        <Link to="../"> <button>CONTINUAR COMPRANDO</button></Link>
-                        {isAuthenticated ? (
-                            // Exibe o botão "FINALIZAR COMPRA" se o usuário estiver logado
-                            <a
-                                href={`https://wa.me/557588899991?text=${generateMessage()}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <button>FINALIZAR COMPRA</button>
-                            </a>
+                    <div className='containerProducts'>
+                        {cart.length === 0 ? (
+                            <p className='error-mensage'>O CARRINHO ESTÁ VAZIO.</p>
                         ) : (
-                            // Exibe o botão "CADASTRE-SE" caso o usuário não esteja logado
-                            <Link to="/registrar">
-                                <button>CADASTRE-SE</button>
-                            </Link>
+                            cart.map((item, index) => (
+                            
+                                <div key={index} className="produto-carrinho">
+                                    <img className='prod-image' src={item.imageUrl} alt={item.description} />
+                                    <div className='prod-info'>
+                                        <p className='description'>{item.description}</p>
+                                        <p className='price'>{item.price}</p>
+                                        <p className='tamanho'>Tamanho: {item.size}</p>
+                                    </div>
+                                    {/* Botão para remover o item individual */}
+                                    <button onClick={() => removeItem(index)} className="remove-item-button">🗑️</button>
+                                </div>
+                            ))
                         )}
-                        <p>TOTAL: R$ {calculateTotal()}</p>
                     </div>
-                )}
+                </div>
             </div>
             <div className='altura'></div>
             <FooterF className='footer' />

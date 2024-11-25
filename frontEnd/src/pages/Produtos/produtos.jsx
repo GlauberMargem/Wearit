@@ -66,7 +66,6 @@ function Produtos() {
       {isPopupVisible && (
         <div className={`carrinho_popup ${isPopupVisible ? '' : 'hide'}`}>
           <h2 className="header_carrinho">ADICIONADO COM SUCESSO</h2>
-          <hr className="popup-divider" />
           <div className="descricao_popup">
             <img src={imageUrl} alt={description} className="imagem_popup" />
             <div className="class-descricao">
@@ -74,7 +73,6 @@ function Produtos() {
               <p>{price}</p>
             </div>
           </div>
-          <hr className="popup-divider" />
           <div className="popup-actions">
             <button onClick={handleGoToCart} className="go-to-cart cart-botton">IR PARA O CARRINHO</button>
             <button onClick={handleContinueShopping} className="continue-shopping cart-botton">CONTINUE COMPRANDO</button>

@@ -44,14 +44,14 @@ function Header() {
           <img className="logo" src={Logo} alt="Logo" />
         </Link>
         <div className="user-info">
-          <span className="username">
-            <Link to="/login" className="user">
-              {nomeUsuario || "FAÇA LOGIN"}
-            </Link>
-          </span>
           <Link to="/login" className="user">
             <img src={user} alt="Usuario" />
           </Link>
+          <span className="username">
+            <Link to="/login" className="user">
+              {nomeUsuario || "LOGIN"}
+            </Link>
+          </span>
           <div className="sacola">
             <Link to="/carrinho">
               <img src={sacola} alt="Sacola" />
@@ -85,32 +85,26 @@ function Header() {
           <li className="menu-item">
             <Link to="/roupas">
               <div>ROUPAS</div>
-              <hr />
             </Link>
           </li>
 
           <li className="menu-item">
             <Link to="/masculino">
               <div>MASCULINO</div>
-              <hr />
             </Link>
           </li>
 
           <li className="menu-item">
             <Link to="/feminino">
               <div>FEMININO</div>
-              <hr />
             </Link>
           </li>
-
-          {nomeUsuario && (
-            <li className="menu-item">
-              <button onClick={handleLogout} className="side-menu-logout">
-                LOGOUT
-              </button>
-            </li>
-          )}
         </ul>
+        {nomeUsuario && (
+            <button onClick={handleLogout} className="side-menu-logout">
+              LOGOUT
+            </button>
+          )}
       </div>
     </>
   );

@@ -1,7 +1,4 @@
 .principal {
-    display: flex;
-    justify-content: center;
-    align-items: start;
     margin-top: 3em;
 }
 
@@ -11,10 +8,6 @@
 
 .car-container {
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    flex-wrap: wrap;
 }
 
 .car-title {
@@ -42,22 +35,20 @@
 .prod-info {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 80%;
 }
 
 .description {
     font-size: 28px;
     font-weight: bold;
-    margin: 10px 5px;
+    line-height: 25px;
 }
 
 
 .price {
-    font-weight: 400;
+    font-weight: 200;
     font-size: 22px;
-    margin: 20px 0;
 }
 
 .tamanho {
@@ -65,19 +56,19 @@
 }
 
 .buttons {
-    margin: 80px 50px;
-    display: flex;
+    display: flex !important;
+    width: 80%;
+    margin-left: 20px;
     flex-direction: column;
 }
 
 .buttons p {
-    background: rgb(221, 221, 221);
+    background: transparent;
     border: 1px solid black;
     border-radius: 4px;
     color: rgb(0, 0, 0);
     margin-top: 20px;
     text-align: center;
-    font-family: monospace;
     font-size: 18px;
     font-weight: bold;
     padding: 5px;
@@ -85,25 +76,22 @@
 
 .buttons button {
     cursor: pointer;
-    background-color: black;
-    color: white;
+    background-color: transparent;
+    color: black;
     font-weight: bold;
-    border: none;
+    border: solid 1px;
     border-radius: 4px;
-    box-shadow: 5px 3px 2px rgba(0, 0, 0, 0.2);
-    padding: 10px 30px;
+    padding: 10px 12px;
     transition: all 0.2s ease;
     width: 200px;
     margin-top: 20px;
-    box-sizing: border-box;
-    flex-grow: 1;
-    flex-shrink: 1;
     min-width: 120px;
 }
 
-.buttons button:hover {
-    box-shadow: 5px 3px 2px rgba(0, 0, 0, 0.5);
-    transform: 0.05%;
+button:hover {
+    background: black;
+    color: white;
+    border-radius: 4px;
 }
 
 .remove-item-button {
@@ -135,10 +123,8 @@
 
     .principal {
         padding: 0 10px;
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
         margin: -50px 0 0 0;
+        flex-direction: column-reverse;
     }
 
     .car-title {
@@ -147,10 +133,6 @@
         margin: 0;
     }
 
-    .buttons {
-        display: flex;
-        width: 80%;
-    }
 
     .buttons button {
         font-size: 14px;
@@ -186,12 +168,10 @@
     .description {
         font-size: 18px;
         font-weight: bold;
-        margin: 0;
     }
 
     .price {
         font-size: 16px;
-        margin: 5px;
     }
 
     .tamanho {
@@ -204,7 +184,6 @@
         background-color: #333;
         border: none;
         border-radius: 0 0 16px 16px;
-
     }
 
     .remove-item-button:hover {
@@ -222,7 +201,40 @@
     }
 
     .buttons button {
-        padding: 12px 20px;
+        padding: 10px 12px;
         font-size: 14px;
     }
+}
+
+.produto-carrinho {
+    display: flex;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0px 10px 42px -27px rgba(54, 54, 54, 0.4);
+    border: solid 1px #a8a8a8;
+}
+
+.containerProducts {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.subbuttons button {
+    margin-right: 2vw;
+}
+
+.total p {
+    display: flex;
+    border-top: dashed 2px lightgray;
+    border-radius: unset;
+    border-inline: none;
+    border-bottom: none;
+}
+
+.car-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

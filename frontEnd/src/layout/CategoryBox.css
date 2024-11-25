@@ -32,12 +32,6 @@
     transition: color 0.3s ease, background 0.3s ease;
 }
 
-.box-menu a:hover {
-    background: linear-gradient(to top, #888888, #222, #888888);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
 
 @media (max-width: 650px) {
     .box-menu {
@@ -52,4 +46,40 @@
         font-size: clamp(16px, 3vw, 20px);
         padding: 0;
     }
+}
+
+
+#boxMenu ul li a {
+    position: relative;
+    color: #444;
+}
+
+#boxMenu ul li a:hover {
+    transition: color 0.5s ease !important;
+    color: black !important;
+}
+
+#boxMenu ul li a:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+#boxMenu ul li a:hover::before {
+    transform: scaleX(1);
+}
+
+#boxMenu ul li a:focus::before {
+    transform: scaleX(1);
+    color: black !important;
+}
+#boxMenu ul li a:focus {
+    color: black !important;
 }
