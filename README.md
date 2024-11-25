@@ -1,6 +1,6 @@
 <h1 align="center"> Wearit - E-commerce de Moda Online</h1>
 
-Wearit é um projeto de site de e-commerce para uma marca própria focada no mercado de moda online. O site será simples, minimalista e dedicado a proporcionar uma experiência de usuário fluida.
+**Wearit** é um projeto de site de e-commerce para uma marca própria focada no mercado de moda online. O site será simples, minimalista e dedicado a proporcionar uma experiência de usuário fluida.
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -19,7 +19,7 @@ Wearit é um projeto de site de e-commerce para uma marca própria focada no mer
 ### Front-end
 - **ReactJS**: Para construir interfaces de usuário
 - **Axios**: Para requisições HTTP
-- **HTML/CSS**: Para a estrutura e estilo da aplicação
+- **HTML5/CSS3**: Para a estrutura e estilo da aplicação
 
 ### Ferramentas e Recursos
 - **Postman**: Para testar APIs
@@ -34,15 +34,14 @@ Wearit é um projeto de site de e-commerce para uma marca própria focada no mer
 - Exibição de catálogo de produtos de moda.
 - Carrinho de compras simples.
 - Integração com WhatsApp para finalização de pedidos.
-- Sistema de gerenciamento de estoque.
 - Sistema de login para usuários.
 
 ## 💻 Requisitos de Sistema
 
 - **Java 21+** ☕
 - **PostgreSQL** 🐘
-- **Maven** (para gerenciamento de dependências no Spring Boot)
-- **Node.js** e **npm** (para o front-end)
+- **Maven** (para gerenciamento de dependências e build no back-end com Spring Boot)
+- **Node.js** e **npm** (para gerenciamento de dependências e build no front-end)
 
 ## 🚀 Como Executar
 
