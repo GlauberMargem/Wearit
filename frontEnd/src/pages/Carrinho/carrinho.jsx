@@ -37,30 +37,15 @@ function Carrinho() {
     };
 
     return (
-        <div>
-            <Footer nome="FRETE GRÁTIS EM COMPRAS A PARTIR DE R$ 199,00" />
-            <Header />
+        <div id='carCont'>
+ <div>
+                <Footer nome="FRETE GRÁTIS EM COMPRAS A PARTIR DE R$ 199,00" />
+                <Header />
+ </div>
             <div className='principal'>
                 <div className='car-container'>
                     <h1 className='car-title'>CARRINHO</h1>
-                    <div className='containerProducts'>
-                        {cart.length === 0 ? (
-                            <p className='error-mensage'>O CARRINHO ESTÁ VAZIO.</p>
-                        ) : (
-                            cart.map((item, index) => (
-                                <div key={index} className="produto-carrinho">
-                                    <img className='prod-image' src={item.imageUrl} alt={item.description} />
-                                    <div className='prod-info'>
-                                        <p className='description'>{item.description}</p>
-                                        <p className='price'>{item.price}</p>
-                                        <p className='tamanho'>Tamanho: {item.size}</p>
-                                    </div>
-                                    {/* Botão para remover o item individual */}
-                                    <button onClick={() => removeItem(index)} className="remove-item-button">🗑️</button>
-                                </div>
-                            ))
-                        )}
-                    </div>
+
                     {cart.length > 0 && (
                         <div className='buttons'>
                             <div className='subbuttons'>
@@ -85,9 +70,28 @@ function Carrinho() {
                             </div>
                         </div>
                     )}
+                    <div className='containerProducts'>
+                        {cart.length === 0 ? (
+                            <p className='error-mensage'>O CARRINHO ESTÁ VAZIO.</p>
+                        ) : (
+                            cart.map((item, index) => (
+
+                                <div key={index} className="produto-carrinho">
+                                    <img className='prod-image' src={item.imageUrl} alt={item.description} />
+                                    <div className='prod-info'>
+                                        <p className='description'>{item.description}</p>
+                                        <p className='price'>{item.price}</p>
+                                        <p className='tamanho'>Tamanho: {item.size}</p>
+                                    </div>
+                                    {/* Botão para remover o item individual */}
+                                    <button onClick={() => removeItem(index)} className="remove-item-button">🗑️</button>
+                                </div>
+                            ))
+                        )}
+                    </div>
                 </div>
             </div>
-            <div className='altura'></div>
+            
             <FooterF className='footer' />
             <BottomMenu />
         </div>

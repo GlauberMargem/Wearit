@@ -85,6 +85,8 @@ header {
 }
 
 .side-menu.open {
+    display: flex;
+    flex-direction: column;
     width: 300px;
     transform: translateX(0);
 }
@@ -121,28 +123,25 @@ header {
 }
 
 .menu-item div {
+    margin-bottom: 5px;
     align-self: center;
     color: rgb(255, 255, 255);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.2em;
-    font-weight: lighter;
+    font-family: Poppins,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.4em;
+    font-weight: 200;
 }
 
 .side-menu-logout {
-    background: black;
+    background: rgb(39, 39, 39);
     color: rgb(255, 255, 255);
     border: none;
+    width: 60%;
     border-radius: 4px;
-    margin: 0;
     padding: 10px;
-    font-size: 1.5em;
-    width: auto;
+    font-size: 1.2em;
     text-align: center;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.side-menu-logout:hover {
-    background-color: #333;
+    align-self: center;
+    margin-top: 100px;
 }
 
 .menu-item hr {
@@ -171,6 +170,9 @@ header {
         font-size: 18px;
         text-align: center;
         padding: 20px 0;
+        margin-bottom: 20px;
+        font-family: Poppins ,'Segoe UI',Verdana, sans-serif;
+        font-weight: 300;
     }
 
     .menu-item hr {

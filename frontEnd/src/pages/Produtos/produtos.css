@@ -100,17 +100,13 @@ h2 {
         margin: 0;
     }
 
-    /* Esconde o popup no mobile por padrão */
-    .carrinho_popup {
-        display: none;
-    }
 }
 
 /* ------------- CARRINHO ---------------- */
 
 .carrinho_popup {
     position: fixed;
-    bottom: 10%;
+    bottom: 40%;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -130,7 +126,8 @@ h2 {
 .header_carrinho {
     border-bottom: solid 1px lightgray;
     width: 100%
-  }
+}
+
 .carrinho_popup.hide {
     opacity: 0;
     pointer-events: none;

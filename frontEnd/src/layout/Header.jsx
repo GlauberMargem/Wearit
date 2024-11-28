@@ -99,15 +99,12 @@ function Header() {
               <div>FEMININO</div>
             </Link>
           </li>
-
-          {nomeUsuario && (
-            <li className="menu-item">
-              <button onClick={handleLogout} className="side-menu-logout">
-                LOGOUT
-              </button>
-            </li>
-          )}
         </ul>
+        {nomeUsuario && (
+            <button onClick={handleLogout} className="side-menu-logout">
+              LOGOUT
+            </button>
+          )}
       </div>
     </>
   );

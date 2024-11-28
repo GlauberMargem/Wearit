@@ -5,11 +5,11 @@ footer {
     align-items: center;
 }
 
+
 footer h1 {
-    font-size: medium;
+    font-size: small;
     color: white;
     padding: 0.5em 0;
-    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin: 0;
 }
 

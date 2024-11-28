@@ -91,7 +91,6 @@
 button:hover {
     background: black;
     color: white;
-    border-radius: 4px;
 }
 
 .remove-item-button {
@@ -124,6 +123,7 @@ button:hover {
     .principal {
         padding: 0 10px;
         margin: -50px 0 0 0;
+        flex-direction: column-reverse;
     }
 
     .car-title {
@@ -183,7 +183,6 @@ button:hover {
         background-color: #333;
         border: none;
         border-radius: 0 0 16px 16px;
-
     }
 
     .remove-item-button:hover {
@@ -211,12 +210,12 @@ button:hover {
     margin: 20px;
     background-color: #fff;
     border-radius: 16px;
-    width: 700px;
     box-shadow: 0px 10px 42px -27px rgba(54, 54, 54, 0.4);
     border: solid 1px #a8a8a8;
 }
 
 .containerProducts {
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
 }
@@ -231,4 +230,17 @@ button:hover {
     border-radius: unset;
     border-inline: none;
     border-bottom: none;
-  }
+}
+
+.car-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#carCont {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
