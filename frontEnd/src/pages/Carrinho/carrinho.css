@@ -91,7 +91,6 @@
 button:hover {
     background: black;
     color: white;
-    border-radius: 4px;
 }
 
 .remove-item-button {
@@ -233,8 +232,15 @@ button:hover {
     border-bottom: none;
 }
 
-.car-container{
+.car-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#carCont {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

@@ -37,9 +37,11 @@ function Carrinho() {
     };
 
     return (
-        <div>
-            <Footer nome="FRETE GRÁTIS EM COMPRAS A PARTIR DE R$ 199,00" />
-            <Header />
+        <div id='carCont'>
+ <div>
+                <Footer nome="FRETE GRÁTIS EM COMPRAS A PARTIR DE R$ 199,00" />
+                <Header />
+ </div>
             <div className='principal'>
                 <div className='car-container'>
                     <h1 className='car-title'>CARRINHO</h1>
@@ -73,7 +75,7 @@ function Carrinho() {
                             <p className='error-mensage'>O CARRINHO ESTÁ VAZIO.</p>
                         ) : (
                             cart.map((item, index) => (
-                            
+
                                 <div key={index} className="produto-carrinho">
                                     <img className='prod-image' src={item.imageUrl} alt={item.description} />
                                     <div className='prod-info'>
@@ -89,7 +91,7 @@ function Carrinho() {
                     </div>
                 </div>
             </div>
-            <div className='altura'></div>
+            
             <FooterF className='footer' />
             <BottomMenu />
         </div>

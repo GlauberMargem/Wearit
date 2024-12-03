@@ -41,7 +41,7 @@ function Produtos() {
         // No mobile, o popup desaparece após 2 segundos
         setTimeout(() => {
           setIsPopupVisible(false);
-        }, 2000);
+        }, 5000);
       }
     } else {
       alert("Por favor, selecione um tamanho antes de adicionar ao carrinho.");
