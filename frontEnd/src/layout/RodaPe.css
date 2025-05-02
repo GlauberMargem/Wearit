@@ -10,11 +10,16 @@
 .footer-logo img {
     width: 200px;
 }
+.footer-contatos h1 {
+    color: #FFF;
+    font-size: 20px;
+    flex-direction: column;
+}
 
 .footer-socials {
     display: flex;
     justify-content: space-between;
-    width: 140px;
+    width: 100px;
 }
 
 .social-icon {

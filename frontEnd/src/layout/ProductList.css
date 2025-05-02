@@ -11,6 +11,7 @@
   cursor: pointer;
   margin: 10px;
   flex-basis: calc(40% - 20px);
+  background-color: #e9ecef;
   /* Definindo a largura para 2 colunas */
 }
 

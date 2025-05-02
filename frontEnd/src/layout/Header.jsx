@@ -6,11 +6,15 @@ import closeIcon from "../images/fechar.svg";
 import user from "../images/usuario.svg";
 import sacola from "../images/sacola1.png";
 import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [nomeUsuario, setNomeUsuario] = useState("");
   const [logoutVisible, setLogoutVisible] = useState(false); // Estado para controlar visibilidade do logout
+
+  const { cart } = useCart(); // acessa o carrinho
+  const cartCount = cart.length;
 
   useEffect(() => {
     const nome = localStorage.getItem("nomeUsuario");
@@ -55,10 +59,9 @@ function Header() {
           <div className="sacola">
             <Link to="/carrinho">
               <img src={sacola} alt="Sacola" />
+              {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
             </Link>
           </div>
-
-          {/* Mostrar o botão de logout apenas quando nomeUsuario estiver definido */}
           {nomeUsuario && (
             <button onClick={handleLogout} className="logout-button">
               LOGOUT

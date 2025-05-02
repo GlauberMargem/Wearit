@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Footer from "../../layout/Footer";
 import Header from '../../layout/Header';
@@ -16,11 +16,13 @@ function Produtos() {
 
   const [selectedSize, setSelectedSize] = useState(null);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const { addToCart } = useCart();
 
   const handleSizeSelect = (size) => {
     setSelectedSize(size);
+    setErrorMessage(''); // limpa erro se um tamanho for selecionado
   };
 
   const handleAddToCart = () => {
@@ -32,19 +34,21 @@ function Produtos() {
         size: selectedSize,
       };
       addToCart(product);
-      setIsPopupVisible(true); // Exibe o popup
+      setErrorMessage('');
+      setIsPopupVisible(true);
 
-      // Verifica o tamanho da tela
       const isMobile = window.innerWidth < 660;
 
       if (isMobile) {
-        // No mobile, o popup desaparece após 2 segundos
         setTimeout(() => {
           setIsPopupVisible(false);
         }, 5000);
       }
     } else {
-      alert("Por favor, selecione um tamanho antes de adicionar ao carrinho.");
+      setErrorMessage("Por favor, selecione um tamanho antes de adicionar ao carrinho.");
+      setTimeout(() => {
+        setErrorMessage('');
+      }, 3000); // opcional: remove a mensagem após 3 segundos
     }
   };
 
@@ -98,6 +102,11 @@ function Produtos() {
               </div>
             ))}
           </div>
+
+          {errorMessage && (
+            <div className="mensagem-erro">{errorMessage}</div>
+          )}
+
           <button onClick={handleAddToCart} className="add-carrinho">
             ADICIONE AO CARRINHO
           </button>
