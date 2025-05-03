@@ -4,9 +4,8 @@ import Header from '../../layout/Header';
 import Options from '../../layout/Options';
 import BottomMenu from '../../layout/BottomMenu';
 import FooterF from "../../layout/RodaPe";
-import { UsuarioService } from "../../../services/UsuarioService";
-import './registrar.css';
 import { Link } from 'react-router-dom';
+import './registrar.css';
 
 function Registrar() {
   const [formData, setFormData] = useState({
@@ -16,6 +15,7 @@ function Registrar() {
     cep: "",
     senha: ""
   });
+
   // Estado para controlar a exibição da pop-up de sucesso
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   // Estado para controlar a exibição da pop-up de erro
@@ -34,38 +34,32 @@ function Registrar() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Montar o corpo da requisição com base nos dados do formulário
-    const usuarioData = {
-      usuNome: formData.usuario,
-      usuSenha: formData.senha,
-      usuAdm: false,
+    // Verifica se o usuário já está cadastrado
+    const storedUsers = JSON.parse(localStorage.getItem("usuarios")) || [];
+    const existingUser = storedUsers.find(user => user.usuario === formData.usuario);
+
+    if (existingUser) {
+      setErrorMessage("Usuário já existe. Tente um nome de usuário diferente.");
+      setShowErrorPopup(true);
+      return;
+    }
+
+    // Montar o novo objeto de dados do usuário
+    const newUser = {
+      usuario: formData.usuario,
+      senha: formData.senha,
       endereco: {
-        end_rua: formData.endereco,
-        end_numero: formData.numero,
-        end_cep: formData.cep
+        rua: formData.endereco,
+        numero: formData.numero,
+        cep: formData.cep
       }
     };
 
+    // Adiciona o novo usuário ao array de usuários no localStorage
+    storedUsers.push(newUser);
+    localStorage.setItem("usuarios", JSON.stringify(storedUsers));
 
-    // Chamar o serviço para cadastrar o usuário
-    const usuarioService = new UsuarioService();
-    usuarioService
-      .cadastrarUsuario(usuarioData)
-      .then((response) => {
-        console.log("Usuário cadastrado com sucesso!", response.data);
-        setShowSuccessPopup(true); // Exibe a pop-up de confirmação
-      })
-      .catch((error) => {
-        console.error("Erro ao cadastrar o usuário", error);
-        // Verifica se o erro é devido a um usuário já existente
-        if (error.response && error.response.status === 500) {
-          setErrorMessage("Usuário já existe. Tente um nome de usuário diferente.");
-          setShowErrorPopup(true); // Exibe a pop-up de erro
-        } else {
-          setErrorMessage("Ocorreu um erro ao cadastrar o usuário. Tente novamente mais tarde.");
-          setShowErrorPopup(true);
-        }
-      });
+    setShowSuccessPopup(true); // Exibe a pop-up de sucesso
   };
 
   const closeSuccessPopup = () => {

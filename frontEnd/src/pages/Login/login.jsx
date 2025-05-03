@@ -5,7 +5,6 @@ import Footer from "../../layout/Footer";
 import BottomMenu from '../../layout/BottomMenu';
 import FooterF from "../../layout/RodaPe";
 import { Link, useNavigate } from 'react-router-dom';
-import { UsuarioService } from '../../../services/UsuarioService'; // Supondo que o caminho esteja correto
 import './Login.css';
 
 function Login() {
@@ -23,32 +22,38 @@ function Login() {
   }, []);  // Esta função não deve depender de nenhuma alteração externa
 
   // Função para lidar com o login
-  const handleLogin = async (event) => {
+  const handleLogin = (event) => {
     event.preventDefault();
     const usuario = event.target.usuario.value;
     const senha = event.target.password.value;
 
-    try {
-      // Limpa qualquer mensagem anterior antes de tentar o login
-      setPopupMessage("");
+    // Recupera os dados de usuários cadastrados no localStorage
+    const storedUsers = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-      const response = await new UsuarioService().login({ usuNome: usuario, senha });
+    // Verifica se o nome de usuário e senha são válidos
+    const user = storedUsers.find(u => u.usuario === usuario);
 
-      if (response.message) {
-        setPopupMessage(response.message);
-        setTimeout(() => {
-          // Armazenando o nome do usuário no localStorage
-          localStorage.setItem("nomeUsuario", usuario);
-          setIsLoggedIn(true);  // Marca como logado após o sucesso do login
-          navigate("/"); // Redireciona para a página inicial
-        }, 2000);
-      } else {
-        setPopupMessage("Credenciais inválidas. Tente novamente.");
-      }
-    } catch (error) {
-      console.error("Erro ao fazer login:", error);
-      setPopupMessage(error.response ? error.response.data.error : "Erro ao conectar com o servidor.");
+    if (!user) {
+      setPopupMessage("Usuário não encontrado.");
+      return;
     }
+
+    if (user.senha !== senha) {
+      setPopupMessage("Senha incorreta.");
+      return;
+    }
+
+    // Se o login for bem-sucedido, armazene uma flag de login no localStorage
+    localStorage.setItem("nomeUsuario", usuario);
+    localStorage.setItem("isLoggedIn", true); // Armazenando o estado de login
+
+    setIsLoggedIn(true);
+    setPopupMessage("Login bem-sucedido!");
+
+    // Redireciona para a página inicial ou qualquer página desejada
+    setTimeout(() => {
+      navigate("/"); // Alterar para a página de destino após o login
+    }, 2000);
   };
 
   return (
