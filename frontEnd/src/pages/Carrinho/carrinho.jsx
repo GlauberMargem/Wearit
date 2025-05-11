@@ -38,10 +38,10 @@ function Carrinho() {
 
     return (
         <div id='carCont'>
- <div>
+            <div>
                 <Footer nome="FRETE GRÁTIS EM COMPRAS A PARTIR DE R$ 199,00" />
                 <Header />
- </div>
+            </div>
             <div className='principal'>
                 <div className='car-container'>
                     <h1 className='car-title'>CARRINHO</h1>
@@ -53,11 +53,8 @@ function Carrinho() {
                                 <Link to="../"><button>CONTINUAR COMPRANDO</button></Link>
                                 {isAuthenticated ? (
                                     // Exibe o botão "FINALIZAR COMPRA" se o usuário estiver logado
-                                    <a
-                                        href={`https://wa.me/557588899991?text=${generateMessage()}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"><button>FINALIZAR COMPRA</button>
-                                    </a>
+                                    <Link to="/finalizar"><button>FINALIZAR COMPRA</button>
+                                    </Link>
                                 ) : (
                                     // Exibe o botão "CADASTRE-SE" caso o usuário não esteja logado
                                     <Link to="/registrar">
@@ -91,7 +88,7 @@ function Carrinho() {
                     </div>
                 </div>
             </div>
-            
+
             <FooterF className='footer' />
             <BottomMenu />
         </div>

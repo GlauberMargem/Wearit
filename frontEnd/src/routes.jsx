@@ -8,6 +8,7 @@ import Registrar from "./pages/Register/registrar";
 import Produtos from "./pages/Produtos/produtos";
 import Carrinho from "./pages/Carrinho/carrinho";
 import { CartProvider } from './context/CartContext'; // Importe o CartProvider
+import Finalizar from "./pages/Finalizar/finalizar";
 
 function AppRoutes() {
     return (
@@ -22,6 +23,7 @@ function AppRoutes() {
                     <Route path="/registrar" element={<Registrar />} /> {/* Página de registro */}
                     <Route path="/produtos" element={<Produtos />} /> {/* Página de produtos */}
                     <Route path="/carrinho" element={<Carrinho />} /> {/* Página de carrinho */}
+                    <Route path="/Finalizar" element={<Finalizar />} /> {/* Página de finalizar */}
                 </Routes>
             </BrowserRouter>
         </CartProvider>
