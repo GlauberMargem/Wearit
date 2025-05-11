@@ -145,9 +145,9 @@ function Registrar() {
       {showSuccessPopup && (
         <div className="popup">
           <div className="popup-content">
-            <h2>Registro Confirmado!</h2>
+            <h2>Cadastro Confirmado!</h2>
             <p>Seu registro foi realizado com sucesso.</p>
-            <button onClick={closeSuccessPopup}>Fechar</button>
+            <Link to="/login"><button type="button">Efetuar Login</button></Link>
           </div>
         </div>
       )}
@@ -155,7 +155,7 @@ function Registrar() {
       {showErrorPopup && (
         <div className="popup">
           <div className="popup-content">
-            <h2>Erro ao Registrar!</h2>
+            <h2>Erro ao Cadastrar!</h2>
             <p>{errorMessage}</p>
             <button onClick={closeErrorPopup}>Fechar</button>
           </div>
