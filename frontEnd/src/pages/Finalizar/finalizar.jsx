@@ -4,12 +4,18 @@ import Header from '../../layout/Header';
 import Footer from '../../layout/Footer';
 import FooterF from "../../layout/RodaPe";
 import BottomMenu from '../../layout/BottomMenu';
-import qrCode from '../../images/qr_code.png'
-import './finalizar.css'; // Você pode estilizar como quiser
+import qrCode from '../../images/qr_code.png';
+import { useCart } from '../../context/CartContext';
+import { Link } from 'react-router-dom';
+import ModalCompraSucesso from '../../layout/ModalCompraSucesso';
+import './finalizar.css';
 
 function FinalizarCompra() {
     const navigate = useNavigate();
     const [formaPagamento, setFormaPagamento] = useState("pix");
+    const { cart, clearCart, removeItem } = useCart();
+    const [mostrarModal, setMostrarModal] = useState(false);
+
 
     // Verifica se o usuário está logado
     useEffect(() => {
@@ -19,11 +25,6 @@ function FinalizarCompra() {
             navigate("/login");
         }
     }, []);
-
-    const handlePagamento = () => {
-        alert(`Compra finalizada com ${formaPagamento.toUpperCase()}!`);
-        // Aqui você poderia limpar o carrinho ou redirecionar
-    };
 
     return (
         <div className="finalizar-container">
@@ -69,13 +70,23 @@ function FinalizarCompra() {
                         <input type="text" placeholder="CVV" required />
                     </div>
                 )}
-
-                <button onClick={handlePagamento} className="botao-finalizar">
-                    Finalizar Compra
-                </button>
+                    <button
+                        onClick={() => {
+                            clearCart();
+                            setMostrarModal(true);
+                        }}
+                        className="botao-finalizar"
+                    >
+                        Finalizar Compra
+                    </button>
             </div>
+            {mostrarModal && (
+                <ModalCompraSucesso onClose={() => navigate('/')} />
+            )}
             <FooterF />
             <BottomMenu />
+
+
         </div>
     );
 }
