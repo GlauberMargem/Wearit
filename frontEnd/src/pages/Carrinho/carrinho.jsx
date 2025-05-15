@@ -58,7 +58,7 @@ function Carrinho() {
                                 ) : (
                                     // Exibe o botão "CADASTRE-SE" caso o usuário não esteja logado
                                     <Link to="/registrar">
-                                        <button>CADASTRE-SE</button>
+                                        <button>FINALIZAR COMPRA</button>
                                     </Link>
                                 )}
                             </div>
